@@ -43,6 +43,21 @@ $di->setShared('modelsMetadata', function () {
     return new MetaDataAdapter();
 });
 
+
+
+$di->setShared('redis', function () {
+    $redis = new  \Phalcon\Mvc\Model\MetaData\Redis([
+        'prefix' => '',
+        'lifetime' => 86400,
+        'host' => '127.0.0.1',
+        'port' => 6379,
+        'persistent' => false
+    ]);
+    return $redis;
+});
+
+
+
 /**
  * Configure the Volt service for rendering .volt templates
  */

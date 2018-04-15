@@ -1,5 +1,5 @@
 <?php
-namespace Dldh\Modules\Frontend;
+namespace Dldh\Modules\Backend;
 
 use Phalcon\DiInterface;
 use Phalcon\Loader;
@@ -17,12 +17,10 @@ class Module implements ModuleDefinitionInterface
     public function registerAutoloaders(DiInterface $di = null)
     {
         $loader = new Loader();
-
         $loader->registerNamespaces([
             'Dldh\Modules\Backend\Controllers' => __DIR__ . '/controllers/',
-            'Dldh\Modules\Backend\Models' => __DIR__ . '/models/',
+            'Dldh\Models' => APP_PATH . '/models/',
         ]);
-
         $loader->register();
     }
 

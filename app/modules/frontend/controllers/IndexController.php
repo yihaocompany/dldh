@@ -9,6 +9,15 @@ class IndexController extends ControllerBase
     {
 
     }
+    public function noteAction()
+    {
+        exit('note');
 
+    }
+    public function helpAction()
+    {
+
+        exit('help');
+    }
 }
 
