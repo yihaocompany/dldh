@@ -44,19 +44,19 @@
     <form action="" name='theForm' id="theForm" method="post">
         <div class="login-form" style="position: relative">
             <div class="formContent">
-                <div class="title"><?php echo $_language['lang_manager']?></div>
+                <div class="title"><?php echo  $_config['webname']?></div>
                 <div class="formInfo">
                     <div class="formText">
                         <i class="icon icon-user"></i>
-                        <input type="text" name="username" autocomplete="off" class="input-text" value="" placeholder="<?php echo $_language['lang_user']?>" />
+                        <input type="text" name="username" autocomplete="off" class="input-text" value="" placeholder="用户名" />
                     </div>
                     <div class="formText">
                         <i class="icon icon-pwd"></i>
-                        <input type="password" name="password" autocomplete="off" class="input-text" value="" placeholder="<?php echo $_language['lang_password']?>" />
+                        <input type="password" name="password" autocomplete="off" class="input-text" value="" placeholder="密码" />
                     </div>
                     <div class="formText">
                         <i class="icon icon-chick"></i>
-                        <input type="text" name="vertify" autocomplete="off" class="input-text chick_ue" value="" placeholder="<?php echo $_language['lang_verify']?>" />
+                        <input type="text" name="vertify" autocomplete="off" class="input-text chick_ue" value="" placeholder="验证码" />
                         <img src="/backend/admin/validatecode" class="chicuele" id="imgVerify" alt="code" onclick="fleshVerify()">
                     </div>
                     <div class="formText">
@@ -65,12 +65,11 @@
                                 <input type="hidden" value="1" name="remember"/>
                             </div>
                         </div>
-                        <span class="span"><?php echo $_language['lang_saveinfo']?></span>
-                        <a href="#" class="forget_pwd"><?php echo $_language['lang_forgetpassword']?></a>
+
                     </div>
                     <div class="formText submitDiv">
                           <span class="submit_span">
-                          	<input type="button" name="mysubmit" class="sub" value="<?php echo $_language['lang_submit']?>">
+                          	<input type="button" name="mysubmit" class="sub" value="登陆">
                           </span>
                     </div>
                 </div>
@@ -147,7 +146,7 @@
             if(vertify && $('#theForm input[name=username]').val() != '' && $('#theForm input[name=password]').val() != ''){
                 $.ajax({
                     async:false,
-                    url:'/back/admin/login/t='+Math.random(),
+                    url:'/backend/admin/login/t='+Math.random(),
                     data:{'username':$('#theForm input[name=username]').val(),'password':$('#theForm input[name=password]').val(),vertify:$('#theForm input[name=vertify]').val()},
                     type:'post',
                     dataType:'json',
