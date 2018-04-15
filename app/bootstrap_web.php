@@ -46,6 +46,7 @@ try {
      */
     $application->registerModules([
         'frontend' => ['className' => 'Dldh\Modules\Frontend\Module'],
+        'backend' => ['className' => 'Dldh\Modules\Backend\Module'],
     ]);
 
     /**
