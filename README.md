@@ -21,6 +21,7 @@ $di->setShared('cache', function () {
     return $cache;
 });
 ```
+#### 数据库的跟踪
 ```php
 $di->set('profiler', function(){
     return

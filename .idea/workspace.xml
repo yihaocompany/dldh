@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc32b722-5c60-4b3c-8453-04add1e1fda0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Area.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Area.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/AuthGroup.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/AuthGroup.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/AuthGroupAccess.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/AuthGroupAccess.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/AuthRule.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/AuthRule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Help.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Help.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Helpcategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Helpcategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Notice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Notice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/NoticeCommit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/NoticeCommit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Pole.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Pole.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/PoleComplain.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/PoleComplain.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/PoleError.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/PoleError.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/PoleNavHelp.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/PoleNavHelp.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/PoleNavLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/PoleNavLog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/PoleWarn.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/PoleWarn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Warnfirst.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Warnfirst.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Warnsecond.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Warnsecond.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Worker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Worker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/WorkerPointLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/WorkerPointLog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/WorkerPole.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/WorkerPole.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/WorkerSign.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/WorkerSign.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Zmodelbase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Zmodelbase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/services_web.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services_web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/ControllerBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/ControllerBase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/ControllerLoginBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/ControllerLoginBase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/PoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/PoleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/views/admin/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/views/admin/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/views/admin/login.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/views/admin/login.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/views/index/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/views/index/index.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/views/public/htmlender.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/views/public/htmlender.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/views/public/htmlmenu.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/views/public/htmlmenu.phtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -134,8 +98,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="844">
-                <caret line="63" column="3" selection-start-line="63" selection-start-column="3" selection-end-line="63" selection-end-column="3" />
+              <first_editor relative-caret-position="374">
+                <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
               </first_editor>
               <second_editor />
             </state>
@@ -350,18 +314,18 @@
       <workItem from="1523944941109" duration="1972000" />
       <workItem from="1523970407336" duration="213000" />
       <workItem from="1523974832839" duration="2327000" />
-      <workItem from="1523979674180" duration="5559000" />
+      <workItem from="1523979674180" duration="5855000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48704000" />
+    <option name="totallyTimeSpent" value="49000000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2015625" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2015625" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -370,7 +334,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.0" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.34893617" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -736,8 +700,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="844">
-            <caret line="63" column="3" selection-start-line="63" selection-start-column="3" selection-end-line="63" selection-end-column="3" />
+          <first_editor relative-caret-position="374">
+            <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
           </first_editor>
           <second_editor />
         </state>
