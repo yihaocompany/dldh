@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class WorkerPole extends \Phalcon\Mvc\Model
+class WorkerPole extends Zmodelbase
 {
 
     /**

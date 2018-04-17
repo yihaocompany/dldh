@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class Notice extends \Phalcon\Mvc\Model
+class Notice extends Zmodelbase
 {
 
     /**

@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class Config extends \Phalcon\Mvc\Model
+class Config extends \Dldh\Models\Zmodelbase
 {
 
     /**
@@ -32,6 +32,15 @@ class Config extends \Phalcon\Mvc\Model
      * @Column(column="txt", type="string", length=30, nullable=true)
      */
     protected $txt;
+
+    /**
+     *
+     * @var string
+     * @Column(column="hiden", type="integer", length=1, nullable=true)
+     */
+
+    protected  $hidden;
+
 
     /**
      * Method to set the value of field id
@@ -85,6 +94,22 @@ class Config extends \Phalcon\Mvc\Model
         return $this;
     }
 
+
+    /**
+     * Method to set the value of field id
+     *
+     * @param integer $hidden
+     * @return $this
+     */
+    public function setHidden($hidden)
+    {
+        $this->hidden = $hidden;
+
+        return $this;
+    }
+
+
+
     /**
      * Returns the value of field id
      *
@@ -120,6 +145,17 @@ class Config extends \Phalcon\Mvc\Model
      *
      * @return string
      */
+    public function getHidden()
+    {
+        return $this->hidden;
+    }
+
+
+    /**
+     * Returns the value of field txt
+     *
+     * @return integer
+     */
     public function getTxt()
     {
         return $this->txt;
@@ -130,7 +166,7 @@ class Config extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->setSchema("dldh");
+        parent::initialize();
         $this->setSource("config");
     }
 
@@ -167,6 +203,19 @@ class Config extends \Phalcon\Mvc\Model
     }
 
     /**
+     * 保存在缓存中
+     * @return array
+     */
+    public function getconfig(){
+        $data = $this->_cache->get("config");
+        if($data){
+            return $data ;
+        }
+        $config=parent::find()->toArray();
+        $this->_cache->save("config",$config );
+        return $config;
+    }
+    /**
      * Independent Column Mapping.
      * Keys are the real names in the table and the values their names in the application
      *
@@ -178,7 +227,8 @@ class Config extends \Phalcon\Mvc\Model
             'id' => 'id',
             'name' => 'name',
             'value' => 'value',
-            'txt' => 'txt'
+            'txt' => 'txt',
+            'hidden' => 'hidden'
         ];
     }
 

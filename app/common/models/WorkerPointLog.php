@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class WorkerPointLog extends \Phalcon\Mvc\Model
+class WorkerPointLog extends Zmodelbase
 {
 
     /**

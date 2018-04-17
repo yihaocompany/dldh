@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class Helpcategory extends \Phalcon\Mvc\Model
+class Helpcategory extends Zmodelbase
 {
 
     /**

@@ -5,9 +5,16 @@ use Phalcon\Mvc\View;
 
 class AdminController extends ControllerBase
 {
+    public function initialize(){
+        parent::initialize();
+        if($this->session->get('admin')){
+            $this->response->redirect('/backend/index/index');
+        }
+    }
 
     public function indexAction(){
         try {
+
             $username =   $this->request->getPost('username');
             $password =   $this->request->getPost('password');
             $usermode = new \Dldh\Models\User();
@@ -21,31 +28,29 @@ class AdminController extends ControllerBase
                 "bind" => $parameters
             ));
 
-
-
-           // echo $this->di->get('profiler')->getLastProfile()->getSQLStatement();
-
-
-
-
             if($user){
                 $this -> flashSession -> success(  '登陆成功 ' . $user->username );
-                return $this->dispatcher->forward(
+                $this->session->set('admin',array('adminname'=>$user->getUsername(),'email'=>$user->email));
+              /*  return $this->dispatcher->forward(
                     [
                         'controller' => 'index',
                         'action'     => 'index',
                     ]
-                );
+                );*/
+              $this->response->redirect("/backend/index/index");
 
             }else{
 
                 $this -> flashSession -> error(  '登陆失败 ' . $user->username );
-                return $this->dispatcher->forward(
+            /*    return $this->dispatcher->forward(
                     [
                         'controller' => 'admin',
                         'action'     => 'login',
                     ]
-                );
+                );*/
+
+                $this->response->redirect("/backend/admin/login");
+
             }
 
         }catch(\Exception $e){
@@ -56,6 +61,7 @@ class AdminController extends ControllerBase
 
     }
     public function loginAction(){
+
         $this->view->disableLevel(View::LEVEL_MAIN_LAYOUT);
     }
     public function veryloginAction(){

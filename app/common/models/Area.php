@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class Area extends \Phalcon\Mvc\Model
+class Area extends Zmodelbase
 {
 
     /**
@@ -128,7 +128,6 @@ class Area extends \Phalcon\Mvc\Model
     public function setAreaDeep($area_deep)
     {
         $this->area_deep = $area_deep;
-
         return $this;
     }
 
@@ -141,7 +140,6 @@ class Area extends \Phalcon\Mvc\Model
     public function setAreaRegion($area_region)
     {
         $this->area_region = $area_region;
-
         return $this;
     }
 
@@ -220,7 +218,7 @@ class Area extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->setSchema("dldh");
+
         $this->setSource("area");
         $this->hasMany('id', 'Pole', 'place_id', ['alias' => 'Pole']);
     }

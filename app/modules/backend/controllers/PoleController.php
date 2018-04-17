@@ -2,49 +2,33 @@
 
 namespace Dldh\Modules\Backend\Controllers;
 
-class IndexController extends ControllerLoginBase
+class PoleController extends ControllerLoginBase
 {
 
+    /**
+     *塔杆例表
+     */
     public function indexAction()
-    {}
-
-    /**
-     * 退出登陆
-     * 王海滨
-     */
-    public function loginoutAction()
     {
-        $this->session->destroy();
-        return $this->dispatcher->forward(
-            [
-                'controller' => 'admin',
-                'action'     => 'login',
-            ]
-        );
+
     }
 
-    /**
-     * 设置
-     */
-
-    public function configAction(){
-    }
 
     /**
-     * 管理员例表
+     *塔杆例表
      */
 
     public function adminlistAction(){
     }
     /**
-     * 增加管理员例表
+     * 增加塔杆
      */
     public function addadminlistAction(){
     }
 
 
     /**
-     * 修改管理员例表
+     * 修改塔杆
      */
     public function modiadminlistAction(){
     }

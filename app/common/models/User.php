@@ -3,7 +3,7 @@ namespace Dldh\Models;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\Email as EmailValidator;
 
-class User extends \Phalcon\Mvc\Model
+class User extends Zmodelbase
 {
 
     /**

@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class PoleWarn extends \Phalcon\Mvc\Model
+class PoleWarn extends Zmodelbase
 {
 
     /**

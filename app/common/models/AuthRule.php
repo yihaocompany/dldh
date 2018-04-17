@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class AuthRule extends \Phalcon\Mvc\Model
+class AuthRule extends Zmodelbase
 {
 
     /**

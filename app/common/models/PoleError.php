@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class PoleError extends \Phalcon\Mvc\Model
+class PoleError extends Zmodelbase
 {
 
     /**

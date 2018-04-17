@@ -1,24 +1,19 @@
 <?php
-
 use Phalcon\Loader;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
-
-
 /**
  * Shared configuration service
  */
 $di->setShared('config', function () {
     return include APP_PATH . "/config/config.php";
 });
-
 /**
  * Database connection is created based in the parameters defined in the configuration file
  */
 $di->setShared('db', function () use ($di){
     //新建一个事件管理器
     $eventsManager = new \Phalcon\Events\Manager();
-
     //从di中获取共享的profiler实例
     $profiler = $di->getProfiler();
     //监听所有的db事件
@@ -34,11 +29,7 @@ $di->setShared('db', function () use ($di){
         }
     });
 
-
-
-
     $config = $this->getConfig();
-
     $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
     $params = [
         'host'     => $config->database->host,
@@ -51,7 +42,6 @@ $di->setShared('db', function () use ($di){
     if ($config->database->adapter == 'Postgresql') {
         unset($params['charset']);
     }
-
     $connection = new $class($params);
     $connection->setEventsManager($eventsManager);
     return $connection;
@@ -65,24 +55,57 @@ $di->setShared('modelsMetadata', function () {
 });
 
 
+//Phalcon\Cache\Backend\Redis
 
-$di->setShared('redis', function () {
-    $redis = new  \Phalcon\Mvc\Model\MetaData\Redis([
-        'prefix' => '',
-        'lifetime' => 86400,
-        'host' => '127.0.0.1',
-        'port' => 6379,
-        'persistent' => false
-    ]);
-    return $redis;
+
+$di->setShared('cache', function () {
+    $frontCache = new Phalcon\Cache\Frontend\Data(
+        [
+            "lifetime" => 172800,
+        ]
+    );
+    $cache=new Phalcon\Cache\Backend\Redis(
+        $frontCache,
+        [
+            "host"       => "localhost",
+            "port"       => 6379,
+            "persistent" => false,
+            "index"      => 0,
+        ]
+    );
+    return $cache;
 });
 
-$di->set('profiler', function(){
 
+
+$di->set('profiler', function(){
     return
         new  \Phalcon\Db\Profiler();
-
 }, true);
+
+// Simple database connection to localhost
+$di->set(
+    'localmongo',
+    function () {
+        $mongo = new MongoClient();
+        return $mongo->selectDB('shenxianshop');
+    },
+    true
+);
+
+// Connecting to a domain socket, falling back to localhost connection
+$di->set(
+    'mongo',
+    function () {
+        $mongo = new MongoClient(
+            'mongodb:///tmp/mongodb-27017.sock,localhost:27017'
+        );
+        return $mongo->selectDB('shenxianshop');
+    },
+    true
+);
+
+
 
 
 /**

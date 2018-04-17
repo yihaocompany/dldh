@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class Pole extends \Phalcon\Mvc\Model
+class Pole extends Zmodelbase
 {
 
     /**

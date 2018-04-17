@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class Warnfirst extends \Phalcon\Mvc\Model
+class Warnfirst extends Zmodelbase
 {
 
     /**

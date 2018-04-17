@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class AuthGroupAccess extends \Phalcon\Mvc\Model
+class AuthGroupAccess extends Zmodelbase
 {
 
     /**

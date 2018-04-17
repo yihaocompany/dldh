@@ -1,15 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2018/4/17/017
- * Time: 23:55
- */
-
 namespace Dldh\Models;
-
-
-class Zmodelbase
-{
-
+class Zmodelbase extends  \Phalcon\Mvc\Model{
+    protected $_cache;
+    public function initialize(){
+        $this->_cache=  \Phalcon\Di::getDefault()->getShared('cache');
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 namespace Dldh\Models;
-class PoleNavHelp extends \Phalcon\Mvc\Model
+class PoleNavHelp extends Zmodelbase
 {
 
     /**

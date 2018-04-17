@@ -13,7 +13,7 @@
 <div id="loginbox">
     <form id="loginform" class="form-vertical" method="post" action="/backend/admin/index">
 
-        <div class="control-group normal_text"> <h3><img src="/back/img/logo.png" alt="Logo" /></h3></div>
+        <div class="control-group normal_text"> <h3><img src="<?php echo $_config['logo']?>" alt="Logo" /></h3></div>
 
         <div class="control-group">
             <div class="controls">
@@ -32,7 +32,6 @@
         <div class="control-group">
             <div class="controls">
                 <center>  <?php echo $this->flashSession ->output()?></center>
-
             </div>
         </div>
         <div class="form-actions">
@@ -41,10 +40,9 @@
         </div>
     </form>
     <form id="recoverform" action="#" class="form-vertical">
-        <p class="normal_text">如不能登陆请联系管理员.QQ:<?php echo  $_config['tecqq']?></p>
+        <p class="normal_text">如不能登陆请联系管理员.QQ:<?php echo  $_config['tecqq']?> 手机:<?php echo  $_config['tecphone']?></p>
         <div class="form-actions">
             <span class="pull-left"><a href="#" class="flip-link btn btn-success" id="to-login">&laquo;返回</a></span>
-
         </div>
     </form>
 </div>
@@ -52,18 +50,11 @@
 <script src="/js/matrix.login.js"></script>
 <script src="/js/messenger.min.js"></script>
 <script>
-
-
     $(document).ready(function(){
         $("#login").click(function () {
            $("#loginform").submit();
         });
-
-
-
-
     });
 </script>
-
 </body>
 </html>
