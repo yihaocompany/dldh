@@ -67,21 +67,18 @@ class Pole extends Zmodelbase
      * @Column(column="worker_id", type="integer", length=10, nullable=true)
      */
     protected $worker_id;
-
     /**
      *
      * @var integer
      * @Column(column="state", type="integer", length=2, nullable=false)
      */
     protected $state;
-
     /**
      *
      * @var string
      * @Column(column="address", type="string", length=200, nullable=true)
      */
     protected $address;
-
     /**
      * Method to set the value of field id
      *
@@ -91,7 +88,6 @@ class Pole extends Zmodelbase
     public function setId($id)
     {
         $this->id = $id;
-
         return $this;
     }
 
@@ -104,7 +100,6 @@ class Pole extends Zmodelbase
     public function setName($name)
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -117,7 +112,6 @@ class Pole extends Zmodelbase
     public function setPlaceId($place_id)
     {
         $this->place_id = $place_id;
-
         return $this;
     }
 
@@ -130,7 +124,6 @@ class Pole extends Zmodelbase
     public function setLng($lng)
     {
         $this->lng = $lng;
-
         return $this;
     }
 
@@ -143,7 +136,6 @@ class Pole extends Zmodelbase
     public function setLat($lat)
     {
         $this->lat = $lat;
-
         return $this;
     }
 
@@ -156,7 +148,6 @@ class Pole extends Zmodelbase
     public function setWlat($wlat)
     {
         $this->wlat = $wlat;
-
         return $this;
     }
 
@@ -169,7 +160,6 @@ class Pole extends Zmodelbase
     public function setWlng($wlng)
     {
         $this->wlng = $wlng;
-
         return $this;
     }
 
@@ -182,7 +172,6 @@ class Pole extends Zmodelbase
     public function setHead($head)
     {
         $this->head = $head;
-
         return $this;
     }
 
@@ -195,7 +184,6 @@ class Pole extends Zmodelbase
     public function setWorkerId($worker_id)
     {
         $this->worker_id = $worker_id;
-
         return $this;
     }
 
@@ -208,7 +196,6 @@ class Pole extends Zmodelbase
     public function setState($state)
     {
         $this->state = $state;
-
         return $this;
     }
 
@@ -221,7 +208,6 @@ class Pole extends Zmodelbase
     public function setAddress($address)
     {
         $this->address = $address;
-
         return $this;
     }
 
@@ -250,8 +236,7 @@ class Pole extends Zmodelbase
      *
      * @return integer
      */
-    public function getPlaceId()
-    {
+    public function getPlaceId(){
         return $this->place_id;
     }
 
@@ -260,8 +245,7 @@ class Pole extends Zmodelbase
      *
      * @return double
      */
-    public function getLng()
-    {
+    public function getLng(){
         return $this->lng;
     }
 
@@ -270,8 +254,7 @@ class Pole extends Zmodelbase
      *
      * @return double
      */
-    public function getLat()
-    {
+    public function getLat(){
         return $this->lat;
     }
 
@@ -280,8 +263,7 @@ class Pole extends Zmodelbase
      *
      * @return double
      */
-    public function getWlat()
-    {
+    public function getWlat(){
         return $this->wlat;
     }
 
@@ -290,8 +272,7 @@ class Pole extends Zmodelbase
      *
      * @return double
      */
-    public function getWlng()
-    {
+    public function getWlng(){
         return $this->wlng;
     }
 
@@ -300,8 +281,7 @@ class Pole extends Zmodelbase
      *
      * @return string
      */
-    public function getHead()
-    {
+    public function getHead(){
         return $this->head;
     }
 
@@ -310,8 +290,7 @@ class Pole extends Zmodelbase
      *
      * @return integer
      */
-    public function getWorkerId()
-    {
+    public function getWorkerId(){
         return $this->worker_id;
     }
 
@@ -320,8 +299,7 @@ class Pole extends Zmodelbase
      *
      * @return integer
      */
-    public function getState()
-    {
+    public function getState(){
         return $this->state;
     }
 
@@ -330,26 +308,23 @@ class Pole extends Zmodelbase
      *
      * @return string
      */
-    public function getAddress()
-    {
+    public function getAddress(){
         return $this->address;
     }
 
     /**
      * Initialize method for model.
      */
-    public function initialize()
-    {
-        $this->setSchema("dldh");
+    public function initialize(){
         $this->setSource("pole");
-        $this->hasMany('id', 'PoleComplain', 'pole_id', ['alias' => 'PoleComplain']);
-        $this->hasMany('id', 'PoleError', 'pole_id', ['alias' => 'PoleError']);
-        $this->hasMany('id', 'PoleNavHelp', 'pole_id', ['alias' => 'PoleNavHelp']);
-        $this->hasMany('id', 'PoleNavLog', 'pole_id', ['alias' => 'PoleNavLog']);
-        $this->hasMany('id', 'PoleWarn', 'pole_id', ['alias' => 'PoleWarn']);
-        $this->hasMany('id', 'WorkerPole', 'pole_id', ['alias' => 'WorkerPole']);
-        $this->belongsTo('place_id', '\Area', 'id', ['alias' => 'Area']);
-        $this->belongsTo('worker_id', '\Worker', 'id', ['alias' => 'Worker']);
+        $this->hasMany('id', 'Dldh\Models\PoleComplain', 'pole_id', ['alias' => 'PoleComplain']);
+        $this->hasMany('id', 'Dldh\Models\PoleError', 'pole_id',    ['alias' => 'PoleError']);
+        $this->hasMany('id', 'Dldh\Models\PoleNavHelp', 'pole_id',  ['alias' => 'PoleNavHelp']);
+        $this->hasMany('id', 'Dldh\Models\PoleNavLog', 'pole_id',   ['alias' => 'PoleNavLog']);
+        $this->hasMany('id', 'Dldh\Models\PoleWarn', 'pole_id',     ['alias' => 'PoleWarn']);
+        $this->hasMany('id', 'Dldh\Models\WorkerPole', 'pole_id',   ['alias' => 'WorkerPole']);
+        $this->belongsTo('place_id', 'Dldh\Models\Area', 'id',     ['alias' => 'Area']);
+        $this->belongsTo('worker_id', 'Dldh\Models\Worker', 'id',  ['alias' => 'Worker']);
     }
 
     /**
@@ -357,8 +332,7 @@ class Pole extends Zmodelbase
      *
      * @return string
      */
-    public function getSource()
-    {
+    public function getSource(){
         return 'pole';
     }
 
@@ -368,8 +342,7 @@ class Pole extends Zmodelbase
      * @param mixed $parameters
      * @return Pole[]|Pole|\Phalcon\Mvc\Model\ResultSetInterface
      */
-    public static function find($parameters = null)
-    {
+    public static function find($parameters = null){
         return parent::find($parameters);
     }
 
@@ -379,8 +352,7 @@ class Pole extends Zmodelbase
      * @param mixed $parameters
      * @return Pole|\Phalcon\Mvc\Model\ResultInterface
      */
-    public static function findFirst($parameters = null)
-    {
+    public static function findFirst($parameters = null){
         return parent::findFirst($parameters);
     }
 
@@ -390,8 +362,7 @@ class Pole extends Zmodelbase
      *
      * @return array
      */
-    public function columnMap()
-    {
+    public function columnMap(){
         return [
             'id' => 'id',
             'name' => 'name',

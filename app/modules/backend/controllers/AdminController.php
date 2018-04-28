@@ -3,6 +3,7 @@
 namespace Dldh\Modules\Backend\Controllers;
 use Phalcon\Mvc\View;
 
+
 class AdminController extends ControllerBase
 {
     public function initialize(){
@@ -14,7 +15,6 @@ class AdminController extends ControllerBase
 
     public function indexAction(){
         try {
-
             $username =   $this->request->getPost('username');
             $password =   $this->request->getPost('password');
             $usermode = new \Dldh\Models\User();
@@ -27,46 +27,27 @@ class AdminController extends ControllerBase
                 $conditions,
                 "bind" => $parameters
             ));
-
             if($user){
                 $this -> flashSession -> success(  '登陆成功 ' . $user->username );
                 $this->session->set('admin',array('adminname'=>$user->getUsername(),'email'=>$user->email));
-              /*  return $this->dispatcher->forward(
-                    [
-                        'controller' => 'index',
-                        'action'     => 'index',
-                    ]
-                );*/
               $this->response->redirect("/backend/index/index");
-
             }else{
-
                 $this -> flashSession -> error(  '登陆失败 ' . $user->username );
-            /*    return $this->dispatcher->forward(
-                    [
-                        'controller' => 'admin',
-                        'action'     => 'login',
-                    ]
-                );*/
-
                 $this->response->redirect("/backend/admin/login");
-
             }
-
         }catch(\Exception $e){
             $this -> write_exception_log($e);
             $this -> flashSession -> error($e -> getMessage());
             return $this -> response -> redirect('/404');
         }
-
     }
     public function loginAction(){
-
         $this->view->disableLevel(View::LEVEL_MAIN_LAYOUT);
     }
     public function veryloginAction(){
         try {
-            $username =   $this->request->getPost('username');
+         if ($this->request->isPost()){
+            $username =   $this->request->getPost('username','striptags');
             $password =   $this->request->getPost('password');
             $user = new \Dldh\Models\User();
             $conditions = "username = :username: AND password = :password:";
@@ -79,24 +60,39 @@ class AdminController extends ControllerBase
                 $conditions,
                 "bind" => $parameters
             ));
-            if($user){
-                $this->flash->success('登陆成功');
-                $this -> response -> redirect('/backend/admin/index');
-            }
 
+            if($user){
+
+                $this->session->set('admin',$user->toArray());
+                $this->flash->success('登陆成功');
+                $this ->response->redirect('/backend/index/index');
+            }else{
+                $this->flash->error("用户名或密码错");
+                $this ->response->redirect('/backend/admin/login');
+            }
+         }else{
+             $this->flash->error("非法请求");
+         }
         }catch(\Exception $e){
             $this -> write_exception_log($e);
+            $this->flash->error($e->getMessages());
             return $this -> response -> redirect('/404');
         }
+
     }
 
 
     public function validatecodeAction(){
+        $this->view->disable();
+        try {
         $_vc = new \Dldh\Models\ValidateCode();  //实例化一个对象
         $_vc->doimg();
         $this->session->set('back_code', $_vc->getCode());
-        exit;
 
+        }catch(\Exception $e){
+            $this -> write_exception_log($e);
+
+        }
     }
 }
 

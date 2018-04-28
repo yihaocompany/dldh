@@ -10,9 +10,8 @@ class ControllerLoginBase extends ControllerBase
         if(!$this->session->get('admin')){
             $this -> flashSession -> error(  '登陆失败 '  );
             $this->response->redirect( '/backend/admin/login' );
-
         }else{
-            $this->view->setVar('Admin',$this->session->get('admin'));
+            $this->view->setVar('admin',$this->session->get('admin'));
         }
     }
 

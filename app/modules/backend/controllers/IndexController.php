@@ -3,6 +3,16 @@ namespace Dldh\Modules\Backend\Controllers;
 class IndexController extends ControllerLoginBase
 {
     public function indexAction(){
+  /*      var_dump($this->session->get('admin'));
+        exit;*/
+
+        $this->view->setVars(array('workerscount'=>\Dldh\Models\Worker::count(),
+            'polecount'=>\Dldh\Models\Pole::count(),
+            'noticecount'=>\Dldh\Models\Notice::count(),
+            'warncount'=>\Dldh\Models\PoleWarn::count(),
+            'helpcount'=>\Dldh\Models\Help::count(),
+            'signcount'=>\Dldh\Models\WorkerSign::count()));
+
     }
 
     /**

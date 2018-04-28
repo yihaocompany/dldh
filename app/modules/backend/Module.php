@@ -4,7 +4,7 @@ namespace Dldh\Modules\Backend;
 use Phalcon\DiInterface;
 use Phalcon\Loader;
 use Phalcon\Mvc\View;
-use Phalcon\Mvc\View\Engine\Php as PhpEngine;
+use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\ModuleDefinitionInterface;
 
 class Module implements ModuleDefinitionInterface
@@ -19,11 +19,23 @@ class Module implements ModuleDefinitionInterface
         $loader = new Loader();
         $loader->registerNamespaces([
             'Dldh\Modules\Backend\Controllers' => __DIR__ . '/controllers/',
-            'Dldh\Models' => APP_PATH . '/models/',
+            'Dldh\Models' => APP_PATH . '/common/models/',
+            'Dldh\Helpers' =>   APP_PATH . '/common/helpers/',
         ]);
+
         $loader->register();
     }
 
+    /**
+     * Registers services related to the module
+     *
+     * @param DiInterface $di
+     */
+    /**
+     * Registers services related to the module
+     *
+     * @param DiInterface $di
+     */
     /**
      * Registers services related to the module
      *
@@ -38,12 +50,16 @@ class Module implements ModuleDefinitionInterface
             $view = new View();
             $view->setDI($this);
             $view->setViewsDir(__DIR__ . '/views/');
-
             $view->registerEngines([
-                '.volt'  => 'voltShared',
-                '.phtml' => PhpEngine::class
+                '.volt' => function ($view) {
+                    $volt = new VoltEngine($view, $this);
+                    $volt->setOptions([
+                        'compiledPath' => __DIR__ . '/../../../cache/volt/',
+                        'compiledSeparator' => '_'
+                    ]);
+                    return $volt;
+                }
             ]);
-
             return $view;
         });
     }

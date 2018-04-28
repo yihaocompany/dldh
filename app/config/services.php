@@ -55,9 +55,6 @@ $di->setShared('modelsMetadata', function () {
 });
 
 
-//Phalcon\Cache\Backend\Redis
-
-
 $di->setShared('cache', function () {
     $frontCache = new Phalcon\Cache\Frontend\Data(
         [
@@ -74,6 +71,21 @@ $di->setShared('cache', function () {
         ]
     );
     return $cache;
+});
+
+
+$di->setShared('crypt', function () {
+    $crypt = new \Phalcon\Crypt();
+    // don't use PADDING_DEFAULT, Affect the cookie result
+    $crypt->setPadding(\Phalcon\Crypt::PADDING_ZERO);
+    $crypt->setKey('wanghaibin@17705812500'); // Use your own key!
+    return $crypt;
+});
+// http cookies
+$di->setShared('cookies', function () {
+    $cookies = new \Phalcon\Http\Response\Cookies();
+    $cookies->useEncryption(false);
+    return $cookies;
 });
 
 
@@ -121,27 +133,20 @@ $di->setShared('voltShared', function ($view) {
             if ($basePath && substr($basePath, 0, 2) == '..') {
                 $basePath = dirname(__DIR__);
             }
-
             $basePath = realpath($basePath);
             $templatePath = trim(substr($templatePath, strlen($basePath)), '\\/');
-
             $filename = basename(str_replace(['\\', '/'], '_', $templatePath), '.volt') . '.php';
-
             $cacheDir = $config->application->cacheDir;
             if ($cacheDir && substr($cacheDir, 0, 2) == '..') {
                 $cacheDir = __DIR__ . DIRECTORY_SEPARATOR . $cacheDir;
             }
-
             $cacheDir = realpath($cacheDir);
-
             if (!$cacheDir) {
                 $cacheDir = sys_get_temp_dir();
             }
-
             if (!is_dir($cacheDir . DIRECTORY_SEPARATOR . 'volt' )) {
                 @mkdir($cacheDir . DIRECTORY_SEPARATOR . 'volt' , 0755, true);
             }
-
             return $cacheDir . DIRECTORY_SEPARATOR . 'volt' . DIRECTORY_SEPARATOR . $filename;
         }
     ]);

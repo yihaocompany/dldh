@@ -16,8 +16,8 @@ $loader->registerNamespaces([
  * Register module classes
  */
 $loader->registerClasses([
-    'Dldh\Modules\Frontend\Module' => APP_PATH . '/modules/frontend/Module.php',
-    'Dldh\Modules\Backend\Module' => APP_PATH . '/modules/backend/Module.php',
+    'Dldh\Modules\Home\Module'     => APP_PATH . '/modules/home/Module.php',
+    'Dldh\Modules\Backend\Module'  => APP_PATH . '/modules/backend/Module.php',
     'Dldh\Modules\Cli\Module'      => APP_PATH . '/modules/cli/Module.php'
 ]);
 

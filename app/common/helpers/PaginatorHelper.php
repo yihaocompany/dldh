@@ -8,7 +8,7 @@
  * @link www.marser.cn
  */
 
-namespace Marser\App\Helpers;
+namespace Dldh\Helpers;
 
 class PaginatorHelper {
 

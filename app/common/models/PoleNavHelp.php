@@ -11,35 +11,30 @@ class PoleNavHelp extends Zmodelbase
      * @Column(column="id", type="integer", length=10, nullable=false)
      */
     protected $id;
-
     /**
      *
      * @var integer
      * @Column(column="pole_id", type="integer", length=10, nullable=true)
      */
     protected $pole_id;
-
     /**
      *
      * @var string
      * @Column(column="pic", type="string", length=100, nullable=true)
      */
     protected $pic;
-
     /**
      *
      * @var string
      * @Column(column="notice", type="string", length=500, nullable=true)
      */
     protected $notice;
-
     /**
      *
      * @var integer
      * @Column(column="user_id", type="integer", length=11, nullable=true)
      */
     protected $user_id;
-
     /**
      * Method to set the value of field id
      *
@@ -49,7 +44,6 @@ class PoleNavHelp extends Zmodelbase
     public function setId($id)
     {
         $this->id = $id;
-
         return $this;
     }
 
@@ -62,7 +56,6 @@ class PoleNavHelp extends Zmodelbase
     public function setPoleId($pole_id)
     {
         $this->pole_id = $pole_id;
-
         return $this;
     }
 
@@ -75,7 +68,6 @@ class PoleNavHelp extends Zmodelbase
     public function setPic($pic)
     {
         $this->pic = $pic;
-
         return $this;
     }
 
@@ -88,7 +80,6 @@ class PoleNavHelp extends Zmodelbase
     public function setNotice($notice)
     {
         $this->notice = $notice;
-
         return $this;
     }
 
@@ -101,7 +92,6 @@ class PoleNavHelp extends Zmodelbase
     public function setUserId($user_id)
     {
         $this->user_id = $user_id;
-
         return $this;
     }
 
@@ -160,7 +150,6 @@ class PoleNavHelp extends Zmodelbase
      */
     public function initialize()
     {
-        $this->setSchema("dldh");
         $this->setSource("pole_nav_help");
         $this->belongsTo('pole_id', '\Pole', 'id', ['alias' => 'Pole']);
         $this->belongsTo('user_id', '\User', 'id', ['alias' => 'User']);
