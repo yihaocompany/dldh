@@ -11,7 +11,7 @@ class IndexController extends ControllerLoginBase
             'noticecount'=>\Dldh\Models\Notice::count(),
             'warncount'=>\Dldh\Models\PoleWarn::count(),
             'helpcount'=>\Dldh\Models\Help::count(),
-            'signcount'=>\Dldh\Models\WorkerSign::count()));
+            'signcount'=>\Dldh\Models\WorkerSignBack::count()));
 
     }
 

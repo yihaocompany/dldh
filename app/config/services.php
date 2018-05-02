@@ -117,7 +117,13 @@ $di->set(
     true
 );
 
-
+/*$di['router'] = function() {
+    //Use the annotations router
+    $router = new \Phalcon\Mvc\Router\Annotations(false);
+    //Read the annotations from ProductsController if the uri starts with /api/productsy
+    $router->addResource('Dldh\Modules\Backend\Controllers\System', '/poles');
+    return $router;
+};*/
 
 
 /**

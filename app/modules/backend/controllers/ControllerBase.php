@@ -28,7 +28,6 @@ class ControllerBase extends Controller
             'message' => $message,
             'data' => $data,
         );
-        //$this -> response -> setContent(json_encode($result));
         $this -> response -> setJsonContent($result);
         $this -> response -> send();
     }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Dldh\Models;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\Email as EmailValidator;
@@ -86,6 +87,13 @@ class Worker extends Zmodelbase
     protected $token_at;
 
     /**
+     *
+     * @var integer
+     * @Column(column="status", type="integer", length=1, nullable=false)
+     */
+    protected $status;
+
+    /**
      * Method to set the value of field id
      *
      * @param integer $id
@@ -94,7 +102,6 @@ class Worker extends Zmodelbase
     public function setId($id)
     {
         $this->id = $id;
-
         return $this;
     }
 
@@ -107,7 +114,6 @@ class Worker extends Zmodelbase
     public function setUsername($username)
     {
         $this->username = $username;
-
         return $this;
     }
 
@@ -120,7 +126,6 @@ class Worker extends Zmodelbase
     public function setPassword($password)
     {
         $this->password = $password;
-
         return $this;
     }
 
@@ -133,7 +138,6 @@ class Worker extends Zmodelbase
     public function setRealname($realname)
     {
         $this->realname = $realname;
-
         return $this;
     }
 
@@ -146,7 +150,6 @@ class Worker extends Zmodelbase
     public function setHead($head)
     {
         $this->head = $head;
-
         return $this;
     }
 
@@ -159,7 +162,6 @@ class Worker extends Zmodelbase
     public function setPhone($phone)
     {
         $this->phone = $phone;
-
         return $this;
     }
 
@@ -172,7 +174,6 @@ class Worker extends Zmodelbase
     public function setEmail($email)
     {
         $this->email = $email;
-
         return $this;
     }
 
@@ -185,7 +186,6 @@ class Worker extends Zmodelbase
     public function setWeixin($weixin)
     {
         $this->weixin = $weixin;
-
         return $this;
     }
 
@@ -211,7 +211,6 @@ class Worker extends Zmodelbase
     public function setToken($token)
     {
         $this->token = $token;
-
         return $this;
     }
 
@@ -224,7 +223,18 @@ class Worker extends Zmodelbase
     public function setTokenAt($token_at)
     {
         $this->token_at = $token_at;
+        return $this;
+    }
 
+    /**
+     * Method to set the value of field status
+     *
+     * @param integer $status
+     * @return $this
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
         return $this;
     }
 
@@ -313,8 +323,7 @@ class Worker extends Zmodelbase
      *
      * @return string
      */
-    public function getQq()
-    {
+    public function getQq(){
         return $this->qq;
     }
 
@@ -323,8 +332,7 @@ class Worker extends Zmodelbase
      *
      * @return string
      */
-    public function getToken()
-    {
+    public function getToken(){
         return $this->token;
     }
 
@@ -333,9 +341,17 @@ class Worker extends Zmodelbase
      *
      * @return integer
      */
-    public function getTokenAt()
-    {
+    public function getTokenAt(){
         return $this->token_at;
+    }
+
+    /**
+     * Returns the value of field status
+     *
+     * @return integer
+     */
+    public function getStatus(){
+        return $this->status;
     }
 
     /**
@@ -343,10 +359,8 @@ class Worker extends Zmodelbase
      *
      * @return boolean
      */
-    public function validation()
-    {
+  /*  public function validation(){
         $validator = new Validation();
-
         $validator->add(
             'email',
             new EmailValidator(
@@ -356,38 +370,25 @@ class Worker extends Zmodelbase
                 ]
             )
         );
-
         return $this->validate($validator);
-    }
+    }*/
 
     /**
      * Initialize method for model.
      */
-    public function initialize()
-    {
-        $this->setSchema("dldh");
+    public function initialize(){
         $this->setSource("worker");
-        $this->hasMany('id', 'AuthGroupAccess', 'uid', ['alias' => 'AuthGroupAccess']);
-        $this->hasMany('id', 'Notice', 'worker_id', ['alias' => 'Notice']);
-        $this->hasMany('id', 'NoticeCommit', 'worker_id', ['alias' => 'NoticeCommit']);
-        $this->hasMany('id', 'Pole', 'worker_id', ['alias' => 'Pole']);
-        $this->hasMany('id', 'PoleComplain', 'worker_id', ['alias' => 'PoleComplain']);
-        $this->hasMany('id', 'PoleError', 'worker_id', ['alias' => 'PoleError']);
-        $this->hasMany('id', 'PoleNavLog', 'worker_id', ['alias' => 'PoleNavLog']);
-        $this->hasMany('id', 'PoleWarn', 'worker_id', ['alias' => 'PoleWarn']);
-        $this->hasMany('id', 'WorkerPointLog', 'worker_id', ['alias' => 'WorkerPointLog']);
-        $this->hasMany('id', 'WorkerPole', 'worker_id', ['alias' => 'WorkerPole']);
-        $this->hasMany('id', 'WorkerSign', 'worker_id', ['alias' => 'WorkerSign']);
-    }
-
-    /**
-     * Returns table name mapped in the model.
-     *
-     * @return string
-     */
-    public function getSource()
-    {
-        return 'worker';
+        $this->hasMany('id', 'Dldh\Models\AuthGroupAccess', 'uid', ['alias' => 'AuthGroupAccess']);
+        $this->hasMany('id', 'Dldh\Models\Notice', 'worker_id', ['alias' => 'Notice']);
+        $this->hasMany('id', 'Dldh\Models\NoticeCommit', 'worker_id', ['alias' => 'NoticeCommit']);
+        $this->hasMany('id', 'Dldh\Models\Pole', 'worker_id', ['alias' => 'Pole']);
+        $this->hasMany('id', 'Dldh\Models\PoleComplain', 'worker_id', ['alias' => 'PoleComplain']);
+        $this->hasMany('id', 'Dldh\Models\PoleError', 'worker_id', ['alias' => 'PoleError']);
+        $this->hasMany('id', 'Dldh\Models\PoleNavLog', 'worker_id', ['alias' => 'PoleNavLog']);
+        $this->hasMany('id', 'Dldh\Models\PoleWarn', 'worker_id', ['alias' => 'PoleWarn']);
+        $this->hasMany('id', 'Dldh\Models\WorkerPointLog', 'worker_id', ['alias' => 'WorkerPointLog']);
+        $this->hasMany('id', 'Dldh\Models\WorkerPole', 'worker_id', ['alias' => 'WorkerPole']);
+        $this->hasMany('id', 'Dldh\Models\WorkerSignBack', 'worker_id', ['alias' => 'WorkerSign']);
     }
 
     /**
@@ -396,8 +397,7 @@ class Worker extends Zmodelbase
      * @param mixed $parameters
      * @return Worker[]|Worker|\Phalcon\Mvc\Model\ResultSetInterface
      */
-    public static function find($parameters = null)
-    {
+    public static function find($parameters = null){
         return parent::find($parameters);
     }
 
@@ -407,8 +407,7 @@ class Worker extends Zmodelbase
      * @param mixed $parameters
      * @return Worker|\Phalcon\Mvc\Model\ResultInterface
      */
-    public static function findFirst($parameters = null)
-    {
+    public static function findFirst($parameters = null){
         return parent::findFirst($parameters);
     }
 
@@ -431,8 +430,19 @@ class Worker extends Zmodelbase
             'weixin' => 'weixin',
             'qq' => 'qq',
             'token' => 'token',
-            'token_at' => 'token_at'
+            'token_at' => 'token_at',
+            'status' => 'status'
         ];
+    }
+
+    /**
+     * Returns table name mapped in the model.
+     *
+     * @return string
+     */
+    public function getSource()
+    {
+        return 'worker';
     }
 
 }

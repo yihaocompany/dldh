@@ -1,9 +1,7 @@
-<!--Header-part-->
+
 <div id="header">
     <h1><a href="dashboard.html">电力后台 Admin</a></h1>
 </div>
-<!--close-Header-part-->
-<!--top-Header-menu-->
 <div id="user-nav" class="navbar navbar-inverse">
     <ul class="nav">
         <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>
@@ -35,59 +33,30 @@
         </li>
     </ul>
 </div>
-<!--close-top-Header-menu-->
-<!--start-top-serch-->
 <div id="search">
-    <input type="text" placeholder="Search here..."/>
-    <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+    <input type="text" placeholder="Search here..." id="tosearch"/>
+    <button type="button" class="tip-bottom" title="Search"  id="globsearch"><i class="icon-search icon-white" ></i></button>
 </div>
-<!--close-top-serch-->
 
-<!--sidebar-menu-->
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> 管理菜单</a>
     <ul>
         <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>管理菜单</span></a> </li>
-        <li> <a href="charts.html"><i class="icon icon-signal"></i> <span>签到</span><span class="label label-important">5</span></a> </li>
-        <li> <a href="widgets.html"><i class="icon icon-inbox"></i> <span>员工管理</span><span class="label label-important">5</span></a> </li>
+        <li> <a href="/backend/workers/sign"><i class="icon icon-signal"></i> <span>签到</span><span class="label label-important">5</span></a> </li>
+        <li> <a href="/backend/workers/"><i class="icon icon-inbox"></i> <span>员工管理</span><span class="label label-important">5</span></a> </li>
         <li><a href="/backend/pole/index"><i class="icon icon-th"></i> <span>塔杆管理</span><span class="label label-important">5</span></a></li>
-        <li><a href="grid.html"><i class="icon icon-fullscreen"></i> <span>通知</span></a></li>
+        <li><a href="/backend/notice"><i class="icon icon-fullscreen"></i> <span>通知</span></a></li>
         <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>数据分析</span> <span class="label label-important">3</span></a>
             <ul>
-                <li><a href="form-common.html">塔杆地图</a></li>
-                <li><a href="form-validation.html">签到统计</a></li>
-                <li><a href="form-wizard.html">数据汇总</a></li>
+                <li><a href="/backend/pole/map">塔杆地图</a></li>
+                <li><a href="/backend/worker/data">签到统计</a></li>
+                <li><a href="/backend/data/">数据汇总</a></li>
             </ul>
         </li>
-
         <li class="submenu"> <a href="#"><i class="icon icon-file"></i> <span>管理员管理</span> <span class="label label-important">5</span></a>
             <ul>
-                <li><a href="index2.html">增加管理员</a></li>
-                <li><a href="gallery.html">修改管理员</a></li>
-
+                <li><a href="/backend/system/adduser">增加管理员</a></li>
+                <li><a href="/backend/system/users">修改管理员</a></li>
             </ul>
         </li>
-   <!--     <li class="submenu"> <a href="#"><i class="icon icon-info-sign"></i> <span>Error</span> <span class="label label-important">4</span></a>
-            <ul>
-                <li><a href="error403.html">Error 403</a></li>
-                <li><a href="error404.html">Error 404</a></li>
-                <li><a href="error405.html">Error 405</a></li>
-                <li><a href="error500.html">Error 500</a></li>
-            </ul>
-        </li>-->
-<!--        <li class="content"> <span>Monthly Bandwidth Transfer</span>
-            <div class="progress progress-mini progress-danger active progress-striped">
-                <div style="width: 77%;" class="bar"></div>
-            </div>
-            <span class="percent">77%</span>
-            <div class="stat">21419.94 / 14000 MB</div>
-        </li>
-        <li class="content"> <span>Disk Space Usage</span>
-            <div class="progress progress-mini active progress-striped">
-                <div style="width: 87%;" class="bar"></div>
-            </div>
-            <span class="percent">87%</span>
-            <div class="stat">604.44 / 4000 MB</div>
-        </li>-->
     </ul>
 </div>
-<!--sidebar-menu-->

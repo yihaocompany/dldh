@@ -15,4 +15,21 @@ class ControllerBase extends Controller
         $this->view->setVar('_config', $this->_config);
     }
 
+    /**
+     * ajax输出
+     * @param $message
+     * @param int $code
+     * @param array $data
+     * @author whb
+     */
+    protected function ajax_return($message, $code=1, array $data=array()){
+        $result = array(
+            'code' => $code,
+            'message' => $message,
+            'data' => $data,
+        );
+        $this -> response -> setJsonContent($result);
+        $this -> response -> send();
+    }
+
 }

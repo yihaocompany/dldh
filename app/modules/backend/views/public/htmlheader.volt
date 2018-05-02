@@ -13,9 +13,12 @@
     {{ stylesheet_link("/back/css/jquery.gritter.css") }}
     {{ stylesheet_link("/back/css/uniform.css") }}
     {{ stylesheet_link("/back/css/select2.css") }}
+    {{ stylesheet_link("/css/bootstrapSwitch.css") }}
     {{ stylesheet_link("/css/bootstrap-pager.css") }}
     {{ javascript_include("/js/excanvas.min.js") }}
     {{ javascript_include("/js/jquery.min.js") }}
     {{ javascript_include("/sweetalert/sweetalert/sweetalert.min.js") }}
+    {{ javascript_include("/js/bootstrap-paginator.min.js") }}
+    {{ javascript_include("/js/bootstrapSwitch.js") }}
 </head>
 <body>

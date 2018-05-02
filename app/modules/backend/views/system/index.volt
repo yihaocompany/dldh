@@ -28,9 +28,9 @@
 
                             <tr class="odd gradeX">
                                 <td> {{ item['id'] }}</td>
-                                <td id="name_{{ item['id'] }}">{{ item['name'] }} </td>
+                                <td id="name_{{ item['id'] }}">{{ item['name'] }}  </td>
                                 <td id="value_{{ item['id'] }}">{{ item['value'] }}</td>
-                                <td id="txt_{{ item['id'] }}">{{ item['txt'] }} </td>
+                                <td id="txt_{{ item['id'] }}">{{ item['txt'] }}    </td>
                                 <td class="center"> <button class="btn btn-primary btn-mini"   data-toggle="modal" id="{{ item['id'] }}" data-target="#myModal" onclick="showmodal(this)">修改</button></td>
                             </tr>
                             {% endfor  %}
@@ -96,6 +96,10 @@
                 success : function(result) {
                     if ( result.code ) {
                         newalert(result.message);
+                        let v_id=$("#id").val();
+                        $('#value_'+v_id).text($('#value').val());
+                        $('#txt_'+v_id).text($('#txt').val());
+                        $('#myModal').modal('hide');
                     } else {
                         newalert(result.message);
                     }

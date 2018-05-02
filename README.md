@@ -66,4 +66,35 @@ $di->setShared('db', function () use ($di){
 
 ```
 
+```php
+       date_default_timezone_set ("Asia/Chongqing");
+       $date=$this->request->get('data');
+       $y=date("Y");
+       $m=date("m");
+       $d=date("d");
+       $datestring=$y."-".$m."-".$d;
+       $date=$date!=""?$date:$datestring;
+
+       $builder = new QueryBuilder();
+       $builder -> from(['begin_workersign'=> '\Dldh\Models\WorkerSignBack']);
+       $builder -> innerJoin('Dldh\Models\WorkerSignBack', 'begin_workersign.worker_id = end_workersign.worker_id','end_workersign');
+       $builder -> innerJoin('Dldh\Models\Worker', 'worker.id = end_workersign.worker_id','worker');
+       $builder -> where('begin_workersign.id<>end_workersign.id  and begin_workersign.type=1 and   end_workersign.type=0  and  begin_workersign.dateflag =end_workersign.dateflag and begin_workersign.dateflag=:dateflag: ',array('dateflag' =>$datestring));
+
+       $builder -> columns([
+                 'begin_workersign.worker_id',
+                'begin_workersign.dateflag as begin_date',
+                'end_workersign.dateflag as end_date',
+                'worker.realname as realname',
+                'end_workersign.type as end_type',
+                'begin_workersign.type  as begin_type',
+                'begin_workersign.creat_at  as begin_create',
+                'end_workersign.creat_at as end_create'
+             ]);
+
+        $query = $builder->getQuery();
+       $list = $query->execute();
+       $this->view->setVars(array('list'=>$list,'date'=>$date));
+```
+
 
