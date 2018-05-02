@@ -22,7 +22,6 @@ class Module implements ModuleDefinitionInterface
             'Dldh\Models' => APP_PATH . '/common/models/',
             'Dldh\Helpers' =>   APP_PATH . '/common/helpers/',
         ]);
-
         $loader->register();
     }
 

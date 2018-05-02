@@ -10,10 +10,10 @@ class IndexController extends ControllerBase
     {   /*date_default_timezone_set ("Asia/Chongqing");
         echo date('d');
         exit;*/
-        echo date('Y-m-d H:i:s');
+      /*  echo date('Y-m-d H:i:s');
         echo "\n";
         echo strtotime(date('Y-m-d H:i:s'));
-        exit;
+        exit;*/
         $this->view->disableLevel(View::LEVEL_MAIN_LAYOUT);
     }
     public function noteAction()

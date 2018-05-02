@@ -126,7 +126,6 @@ class User extends Zmodelbase
     public function setEnabled($enabled)
     {
         $this->enabled = $enabled;
-
         return $this;
     }
 
@@ -313,10 +312,9 @@ class User extends Zmodelbase
      *
      * @return boolean
      */
-    public function validation()
+   /* public function validation()
     {
         $validator = new Validation();
-
         $validator->add(
             'email',
             new EmailValidator(
@@ -326,20 +324,19 @@ class User extends Zmodelbase
                 ]
             )
         );
-
         return $this->validate($validator);
-    }
+    }*/
 
     /**
      * Initialize method for model.
      */
     public function initialize()
     {
-        $this->setSchema("dldh");
+
         $this->setSource("user");
-        $this->hasMany('id', 'Help', 'user_id', ['alias' => 'Help']);
-        $this->hasMany('id', 'Notice', 'user_id', ['alias' => 'Notice']);
-        $this->hasMany('id', 'PoleNavHelp', 'user_id', ['alias' => 'PoleNavHelp']);
+        $this->hasMany('id', 'Dldh\Models\Help', 'user_id', ['alias' => 'Help']);
+        $this->hasMany('id', 'Dldh\Models\Notice', 'user_id', ['alias' => 'Notice']);
+        $this->hasMany('id', 'Dldh\Models\PoleNavHelp', 'user_id', ['alias' => 'PoleNavHelp']);
     }
 
     /**

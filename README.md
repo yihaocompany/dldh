@@ -97,7 +97,7 @@ $di->setShared('db', function () use ($di){
        $this->view->setVars(array('list'=>$list,'date'=>$date));
 ```
 
-```
+```phsql的用法
 use Phalcon\Mvc\Model\Query\Builder as QueryBuilder;
 public function indexAction()
     {

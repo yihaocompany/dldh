@@ -64,9 +64,43 @@ class SystemController extends ControllerLoginBase
             exit($this->ajax_return('发生错误','0'));
         }
 
+    }
 
 
+    public function usersAction(){
+       // var_dump(\Dldh\Models\User::find());
+       // exit;
+           $this->view->setVar('list',\Dldh\Models\User::find() );
+    }
 
+    public function userenableAction(){
+        try{
+            $data=$this->request->getPost();
+            if($data){
+                $id=$data['id'];
+
+                $usr=\Dldh\Models\User::findFirst('id='.$id[0]);
+
+                if($usr){
+                    $usr->setEnabled($data['enable']);
+                    $re=$usr->save();
+                    /* echo $this->di->get('profiler')->getLastProfile()->getSQLStatement();
+                    exit;*/
+                    if($re){
+                        exit($this->ajax_return( '修改成功',1 ));
+                    }
+                    exit($this->ajax_return( '修改失败',0 ));
+
+                }else{
+                    exit($this->ajax_return( '无此记录',0 ));
+                }
+            }else{
+                exit($this->ajax_return( '非法请求',0 ));
+            }
+
+        }catch (\Exception $e){
+            exit($this->ajax_return( '发生错误',0 ));
+        }
     }
 
 }

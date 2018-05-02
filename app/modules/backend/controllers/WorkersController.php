@@ -164,8 +164,8 @@ class WorkersController extends ControllerLoginBase
        $date=$date!=""?$date:$datestring;
 
        $builder = new QueryBuilder();
-       $builder -> from(['begin_workersign'=> '\Dldh\Models\WorkerSignBack']);
-       $builder -> innerJoin('Dldh\Models\WorkerSignBack', 'begin_workersign.worker_id = end_workersign.worker_id','end_workersign');
+       $builder -> from(['begin_workersign'=> '\Dldh\Models\WorkerSign']);
+       $builder -> innerJoin('Dldh\Models\WorkerSign', 'begin_workersign.worker_id = end_workersign.worker_id','end_workersign');
        $builder -> innerJoin('Dldh\Models\Worker', 'worker.id = end_workersign.worker_id','worker');
        $builder -> where('begin_workersign.id<>end_workersign.id  and begin_workersign.type=1 and   end_workersign.type=0  and  begin_workersign.dateflag =end_workersign.dateflag and begin_workersign.dateflag=:dateflag: ',array('dateflag' =>$datestring));
 
