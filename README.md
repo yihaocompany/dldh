@@ -97,4 +97,52 @@ $di->setShared('db', function () use ($di){
        $this->view->setVars(array('list'=>$list,'date'=>$date));
 ```
 
+```
+use Phalcon\Mvc\Model\Query\Builder as QueryBuilder;
+public function indexAction()
+    {
+   
+
+
+
+        $builder = new QueryBuilder();
+        //确定查询表
+        $builder -> from(['poles'=>'\Dldh\Models\Pole']);
+        //关联表
+        $builder -> innerJoin('Dldh\Models\Worker', 'poles.worker_id = workers.id','workers');
+        $builder -> innerJoin('Dldh\Models\Area', 'area.id = poles.area_id','area');
+        // 需要查询的字段，这里两个表的字段都可以
+       $builder -> columns([
+            'poles.id',
+            'poles.id',
+            'area.area_name',
+            'count(parts.id) as count',  //当数据很大时，统计数据时用
+        ]);
+        // where条件
+        $builder -> where('parts.id = :id:',array('id' =>1));
+ 
+       $builder -> andWhere('robots.name = :name:',array('name' => '你好'));
+
+
+        //执行搜索
+        if (isset($params['conditions'])) {
+            foreach ($params['conditions'] as $field => $val) {
+                if (!preg_match('/^\s*$/', $val)) {
+                    //执行模糊搜索
+                    $builder->andWhere("providers.$field like :$field:", array($field => '%' . trim($val) . '%'));
+                }
+            }
+        }
+        // 设置limit条件，order什么的都可以往后加$builder->order()
+       $builder->limit(5,5);
+         $builder->limit($rows, ($currentPage - 1) * $rows);    注意:这里的limit条件和原始sql语句中的limit语句刚好相反
+
+        //获取查询对象
+        $query = $builder->getQuery();
+        //执行并返回结果
+        $result = $query->execute();
+        var_dump($result -> toArray());die;
+        $this->view->setVar('list',$list);
+}
+```
 
