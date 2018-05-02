@@ -28,7 +28,7 @@ class WorkersController extends ControllerLoginBase
             "bind" => $parameters));
         $totalPage=ceil($totalRows/$limit);
         $listpage=$page>=$totalPage?0:$totalPage;
-        $dispalayPage=4;//
+        $dispalayPage=4;
         $endpage=($page+$dispalayPage)>=$totalPage?$totalPage:($page+$dispalayPage);
         $prepage=$page==1?0:$page-1;
         $nextpage=$page>=$totalPage?0:$page+1;
@@ -87,19 +87,6 @@ class WorkersController extends ControllerLoginBase
                    exit($this->ajax_return('用户名已用','0'));
                }
 
-         /*      $phql = "UPDATE \Dldh\Models\Worker SET email = ?1, head = ?2,phone=?3,realname=?4 ,username=?5,weixin=?6  WHERE id = ?0";
-               $return= $this->modelsManager->executeQuery(
-                   $phql,
-                   [
-                       0=> $d['id'],
-                       1 => $d['email'],
-                       2 => $d['head'],
-                       3 => $d['phone'],
-                       4 =>$d['realname'],
-                       5=>$d['username'],
-                       6=>$d['weixin']
-                   ]
-               );*/
                $con= \Dldh\Models\Worker::findFirst('id='.$d['id']);
                if($con){
                    $con->setEmail($d['email']);

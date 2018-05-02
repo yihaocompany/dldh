@@ -33,7 +33,7 @@
                                             <input type="checkbox" id="enable_{{ item.id }}" {% if item.enabled==1 %} checked {% endif %} />
                                         </div></td>
                                     <td>
-                                    <button class="btn  btn-info">修改</button>
+                                    <button class="btn  btn-info" id="{{ item.id }}" data-toggle="modal" data-target="#myModal"  onclick="showmodal(this)">修改</button>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -46,6 +46,39 @@
         </div>
     </div>
 </div>
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    管理管理
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="control-group">
+                    <label class="control-label">登陆名*</label>
+                    <div class="controls">
+                        <input type="text" name="id" id="id" class="span3" placeholder="登陆名" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary">
+                    提交更改
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     $('.switch').on('switch-change', function (e, data) {
         let  $el = $(data.el), value = data.value;
@@ -64,10 +97,14 @@
                 error: function () {
                     newalert('发生错误')  ;
                 }
-
             }
         );
     });
+
+    function  showmodal(obj) {
+            $("#id").val(obj.id);
+    }
+
     function newalert(str) {
         swal({
             title: str,
