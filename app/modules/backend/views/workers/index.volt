@@ -55,28 +55,10 @@
                             </tbody>
                         </table>
 
-
-
-
                     </div>
-                    <div id="mypagers">
-                        <div class="fg-toolbar ui-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix">
-                            <div class="dataTables_filter" id="DataTables_Table_0_filter"></div>
-                            <div class="dataTables_paginate fg-buttonset ui-buttonset fg-buttonset-multi ui-buttonset-multi paging_full_numbers" id="DataTables_Table_0_paginate">
-                                <a tabindex="0" href="javascript:void(0)" class="first ui-corner-tl ui-corner-bl fg-button ui-button ui-state-default ui-state-disabled" id="DataTables_Table_0_first">第1页</a>
-                                <a tabindex="0" href="javascript:void(0)" class="previous fg-button ui-button ui-state-default ui-state-disabled" id="DataTables_Table_0_previous">上页</a><span>
-                                 <a href="javascript:void(0)" tabindex="0" class="fg-button ui-button ui-state-default ui-state-disabled">1</a>
-                                 <a href="javascript:void(0)" tabindex="0" onclick="pagetables(2)" class="fg-button ui-button ui-state-default">2</a>
-                                 <a href="javascript:void(0)" tabindex="0" onclick="pagetables(3)" class="fg-button ui-button ui-state-default">3</a>
-                                 <a href="javascript:void(0)" tabindex="0" onclick="pagetables(4)" class="fg-button ui-button ui-state-default">4</a>
-                                 <a href="javascript:void(0)" tabindex="0" onclick="pagetables(5)" class="fg-button ui-button ui-state-default">5</a></span>
-                                <a tabindex="0" href="javascript:void(0)" class="next fg-button ui-button ui-state-default " id="DataTables_Table_0_next" onclick="pagetables(2)">下页</a>
-                                <a tabindex="0" href="javascript:void(0)" class="last ui-corner-tr ui-corner-br fg-button ui-button ui-state-default " id="DataTables_Table_0_last" onclick="pagetables(31)">最后</a>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
-
+                {% include 'public/pagernav.volt' %}
             </div>
         </div>
     </div>
@@ -95,11 +77,10 @@
                 <div class="widget-box">
                 <div class="widget-content nopadding">
                     <form action="#" method="get" class="form-horizontal">
-
                         <div class="control-group">
                             <label class="control-label">头象（600*600）</label>
                             <div class="controls">
-                                <input type="text" name="id"   id="id"   class="span3" placeholder="值" value="0" />
+                                <input type="hidden" name="id"   id="id"   class="span3" placeholder="值" value="0" />
                                 <input type="file"   class="span3" id="images"    name="file" />
                                 <input type="button" class="span3" id="upbutton"  name="upbutton"  class="upbutton" value="上传" />
                             </div>
@@ -337,6 +318,7 @@
                  });
              });
          }else{
+             $('#id').val("");
              $('#head').val("");
              $('#username').val("");
              $('#realname').val("");

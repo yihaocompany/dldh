@@ -52,7 +52,8 @@ class WorkersController extends ControllerLoginBase
              'first'=>$first,
               'last'=>$listpage,
               'pre'=>$prepage,
-              'next'=>$nextpage
+              'next'=>$nextpage,
+                'url'=>"/backend/workers/index/?search=".$search.'&page=',
         )
         );
     }

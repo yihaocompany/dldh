@@ -68,10 +68,105 @@ class SystemController extends ControllerLoginBase
 
 
     public function usersAction(){
-       // var_dump(\Dldh\Models\User::find());
-       // exit;
-           $this->view->setVar('list',\Dldh\Models\User::find() );
+
+      //     $this->view->setVar('list',\Dldh\Models\User::find() );
+
+        $page =intval($this->request->get('page'));
+        $limit =3;
+        $page = $page > 0 ? $page: 1 ;
+        $offset = ($page - 1) * $limit;
+        $search=trim($this->request->get('search'));
+        $conditions = " username like  :search:";
+        $parameters = array(
+            'search' =>'%'.$search.'%',
+        );
+        $totalRows=\Dldh\Models\User::count(array(
+            $conditions,
+            "bind" => $parameters));
+        $totalPage=ceil($totalRows/$limit);
+        $listpage=$page>=$totalPage?0:$totalPage;
+        $dispalayPage=4;
+        $endpage=($page+$dispalayPage)>=$totalPage?$totalPage:($page+$dispalayPage);
+        $prepage=$page==1?0:$page-1;
+        $nextpage=$page>=$totalPage?0:$page+1;
+        $first=$page>1?1:0;
+        $list =\Dldh\Models\User::find(array(
+            $conditions,
+            "bind" => $parameters,
+            'limit' => array('number' => $limit, 'offset' => $offset) ));
+
+        $page_r=null;
+        for ($x=$page; $x<=$endpage; $x++) {
+            $page_r[] =$x;
+        }
+        $page_rang=$page_r;
+        $this->view->setVars(
+            array(
+                'list'=>$list,
+                'totalrows'=>$totalRows,
+                'pager'=>$page_rang,
+                'current'=>$page,
+                'first'=>$first,
+                'last'=>$listpage,
+                'pre'=>$prepage,
+                'next'=>$nextpage,
+                'url'=>"/backend//system/users/?search=".$search.'&page=',
+            )
+        );
     }
+
+
+    public  function updateuserAction(){
+        try{
+            $data=$this->request->getPost();
+            if($data){
+                $id=$data['id'];
+
+                $conditons='id<>:id: and username=:username:';
+                $parameters=array("id"=>$data['id'],'username'=>$data['username']);
+                $usr=\Dldh\Models\User::findFirst([
+                    $conditons,
+                    'bind' => $parameters,
+                ]);
+                if($usr){
+                    exit($this->ajax_return( '已有此用户名',0 ));
+                }
+                $usr=\Dldh\Models\User::findFirst('id='.$id);
+
+                if($usr){
+                    $usr->setEnabled($data['enabled']);
+                    $usr->setEmail($data['email']);
+                    $usr->setHead($data['head']);
+                    $usr->setUsername($data['username']);
+
+
+                    $re=$usr->update();
+                    if($re){
+                        exit($this->ajax_return( '修改成功',1 ));
+                    }else{
+
+                        $error="";
+                        $messages = $usr->getMessages();
+                        foreach ($messages as $message) {
+                            $error.=$message .", ";
+                        }
+                        exit($this->ajax_return( $error,0 ));
+                    }
+
+
+                }else{
+                    exit($this->ajax_return( '无此记录',0 ));
+                }
+            }else{
+                exit($this->ajax_return( '非法请求',0 ));
+            }
+
+        }catch (\Exception $e){
+
+            exit($this->ajax_return( '发生错误',0 ));
+        }
+    }
+
 
     public function userenableAction(){
         try{
@@ -83,13 +178,21 @@ class SystemController extends ControllerLoginBase
 
                 if($usr){
                     $usr->setEnabled($data['enable']);
-                    $re=$usr->save();
-                    /* echo $this->di->get('profiler')->getLastProfile()->getSQLStatement();
-                    exit;*/
+                    $re=$usr->update();
+
                     if($re){
                         exit($this->ajax_return( '修改成功',1 ));
+                    }else{
+
+                        $error="";
+                        $messages = $usr->getMessages();
+
+                        foreach ($messages as $message) {
+                            $error.=$message .", ";
+                        }
+                        exit($this->ajax_return( $error,0 ));
                     }
-                    exit($this->ajax_return( '修改失败',0 ));
+
 
                 }else{
                     exit($this->ajax_return( '无此记录',0 ));

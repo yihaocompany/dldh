@@ -312,7 +312,7 @@ class WorkerSign extends Zmodelbase
      */
     public function initialize()
     {
-        $this->setSchema("dldh");
+
         $this->setSource("worker_sign");
         $this->belongsTo('worker_id', 'Dldh\Models\Worker', 'id', ['alias' => 'Worker']);
         $this->belongsTo('worker_point_log_id', 'Dldh\Models\WorkerPointLog', 'id', ['alias' => 'WorkerPointLog']);

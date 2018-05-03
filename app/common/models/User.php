@@ -22,6 +22,15 @@ class User extends Zmodelbase
      */
     protected $username;
 
+
+    /**
+     *
+     * @var string
+     * @Column(column="head", type="string", length=100, nullable=true)
+     */
+    protected $head;
+
+
     /**
      *
      * @var string
@@ -101,6 +110,20 @@ class User extends Zmodelbase
     {
         $this->username = $username;
 
+        return $this;
+    }
+
+
+
+    /**
+     * Method to set the value of field head
+     *
+     * @param string $head
+     * @return $this
+     */
+    public function setHead($head)
+    {
+        $this->head = $head;
         return $this;
     }
 
@@ -228,6 +251,17 @@ class User extends Zmodelbase
     }
 
     /**
+     * Returns the value of field head
+     *
+     * @return string
+     */
+    public function getHead()
+    {
+        return $this->head;
+    }
+
+
+    /**
      * Returns the value of field email
      *
      * @return string
@@ -312,7 +346,7 @@ class User extends Zmodelbase
      *
      * @return boolean
      */
-   /* public function validation()
+    public function validation()
     {
         $validator = new Validation();
         $validator->add(
@@ -320,12 +354,12 @@ class User extends Zmodelbase
             new EmailValidator(
                 [
                     'model'   => $this,
-                    'message' => 'Please enter a correct email address',
+                    'message' => '请输入正确的Email',
                 ]
             )
         );
         return $this->validate($validator);
-    }*/
+    }
 
     /**
      * Initialize method for model.
@@ -334,6 +368,13 @@ class User extends Zmodelbase
     {
 
         $this->setSource("user");
+        $this->skipAttributes(array('email', 'password','head'));
+
+        //Skips only when inserting
+       // $this->skipAttributesOnCreate(array('created_at'));
+
+        //Skips only when updating
+       // $this->skipAttributesOnUpdate(array('email'));
         $this->hasMany('id', 'Dldh\Models\Help', 'user_id', ['alias' => 'Help']);
         $this->hasMany('id', 'Dldh\Models\Notice', 'user_id', ['alias' => 'Notice']);
         $this->hasMany('id', 'Dldh\Models\PoleNavHelp', 'user_id', ['alias' => 'PoleNavHelp']);
@@ -371,6 +412,20 @@ class User extends Zmodelbase
         return parent::findFirst($parameters);
     }
 
+
+    public function beforeValidation()
+    {
+        $this->skipValidation(['email']);
+    }
+    public function skipValidation($skipers=[])
+    {
+        foreach ($skipers as $skiper) {
+            if (empty($this->skiper)) {
+                $this->skiper = new \Phalcon\Db\RawValue('""');
+            }
+        }
+    }
+
     /**
      * Independent Column Mapping.
      * Keys are the real names in the table and the values their names in the application
@@ -382,9 +437,11 @@ class User extends Zmodelbase
         return [
             'id' => 'id',
             'username' => 'username',
+            'head' => 'head',
             'email' => 'email',
             'enabled' => 'enabled',
             'salt' => 'salt',
+            'head'=>'head',
             'password' => 'password',
             'last_login' => 'last_login',
             'confirmation_token' => 'confirmation_token',
