@@ -5,13 +5,13 @@
 <div id="user-nav" class="navbar navbar-inverse">
     <ul class="nav">
         <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>
-                <span class="text">欢迎 {{ admin['username'] }}</span><b class="caret"></b></a>
+                <span class="text">欢迎 <?= $admin['username'] ?></span><b class="caret"></b></a>
             <ul class="dropdown-menu">
                 <li><a href="#"><i class="icon-user"></i> 个人详情</a></li>
                 <li class="divider"></li>
                 <li><a href="#"><i class="icon-check"></i> 发布通知</a></li>
                 <li class="divider"></li>
-                <li>{{ linkTo('/backend/index/loginout','<i class=icon-key></i> 退出') }}
+                <li><?= $this->tag->linkto('/backend/index/loginout', '<i class=icon-key></i> 退出') ?>
                 </li>
             </ul>
         </li>

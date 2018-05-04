@@ -1,7 +1,7 @@
 <div id="content">
     <div id="content-header">
-        <div id="breadcrumb"> <a href="/backend" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">系统设置</a> </div>
-        <h1>员工管理</h1>
+        <div id="breadcrumb"> <a href="/backend" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="current">帮助设置</a> </div>
+        <h1>帮助管理</h1>
     </div>
     <div class="container-fluid">
         <hr>
@@ -9,56 +9,65 @@
             <div class="span12">
                 <div class="widget-box">
                     <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
-                        <h5>员工管理</h5> <span class="pull-right">     <h5><button class="btn btn-primary btn-mini" id="0"  data-toggle="modal" data-target="#myModal" onclick="showmodal(this)">新增员工</button></h5></span>
+                        <h5>员工管理</h5> <span class="pull-right">
+                            <h5><button class="btn btn-primary btn-mini" id="0"  data-toggle="modal" data-target="#myModal" onclick="showmodal(this)">新增帮助</button></h5></span>
                     </div>
                     <div class="widget-content nopadding">
                         <table class="table table-bordered table-striped" id="tablelist">
                             <thead>
                             <tr>
                                 <th>id</th>
-                                <th>头像</th>
-                                <th>用户登陆名</th>
-                                <th>用户名</th>
-                                <th>手机</th>
-                                <th>邮件</th>
-                                <th>微信</th>
-                                <th>QQ</th>
-                                <th>状态</th>
+                                <th>图片</th>
+                                <th>标题</th>
+                                <th>分类</th>
+                                <th>管理员</th>
+                                <th>URL</th>
                                 <th>操作</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {% for item in list %}
+                            <?php foreach ($list as $item) { ?>
                                 <tr class="odd gradeX">
-                                    <td> {{ item['id'] }}</td>
-                                    <td><img src="{{ item['head'] }}" width="50" > </td>
-                                    <td>{{ item['username'] }}  </td>
-                                    <td>{{ item['realname'] }}  </td>
-                                    <td>{{ item['phone'] }}  </td>
-                                    <td>{{ item['email'] }}  </td>
-                                    <td>{{ item['weixin'] }}  </td>
-                                    <td>{{ item['qq'] }}  </td>
-                                    <td>
-                                        <div class="switch"   id="switch_{{ item['id'] }}"  data-on-label="<i class='icon-ok icon-white'></i>" data-off-label="<i class='icon-remove'></i>">
-                                            <input type="checkbox"
-                                                    {% if item['status'] == "1" %}
-                                                        checked
-                                                    {% endif  %}
-                                                   id="ch_{{ item['id'] }}" />
-                                        </div>
-                                    </td>
+                                    <td> <?= $item->id ?></td>
+                                    <td><img src="<?= $item->pic ?>" width="50" > </td>
+                                    <td><?= $item->title ?>  </td>
+                                    <td><?= $item->Helpcategory->name ?>  </td>
+                                    <td><?= $item->User->username ?>  </td>
+                                    <td><?= $item->url ?>  </td>
                                     <td class="center">
-                                        <button class="btn btn-primary btn-mini"   data-toggle="modal" id="{{ item['id'] }}" data-target="#myModal" onclick="showmodal(this)">修改</button>
+                                        <button class="btn btn-primary btn-mini"   data-toggle="modal" id="<?= $item['id'] ?>" data-target="#myModal" onclick="showmodal(this)">修改</button>
                                     </td>
                                 </tr>
-                            {% endfor  %}
+                            <?php } ?>
                             </tbody>
                         </table>
 
                     </div>
 
                 </div>
-                {% include 'public/pagernav.volt' %}
+                <?php $disabled = 'ui-state-disabled'; ?>
+<?php $disabledurl = 'javascript:void(0)'; ?>
+<div id="mypagers">
+    <div class="fg-toolbar ui-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix">
+        <div class="dataTables_filter" id="DataTables_Table_0_filter"></div>
+        <div class="dataTables_paginate fg-buttonset ui-buttonset fg-buttonset-multi ui-buttonset-multi paging_full_numbers" id="DataTables_Table_0_paginate">
+            <a tabindex="0" href="<?php if ($first == 0) { ?><?= $disabledurl ?><?php } else { ?><?= $url ?><?= $first ?><?php } ?>" class="first ui-corner-tl ui-corner-bl fg-button ui-button ui-state-default <?php if ($first == 0) { ?><?= $disabled ?><?php } ?>" id="DataTables_Table_0_first">第1页</a>
+            <a tabindex="0" href="<?php if ($pre == 0) { ?><?= $disabledurl ?><?php } else { ?><?= $url ?><?= $pre ?><?php } ?>" class="previous fg-button ui-button ui-state-default <?php if ($pre == 0) { ?><?= $disabled ?><?php } ?>" id="DataTables_Table_0_previous">上页</a><span>
+                <?php $i = 0; ?>
+                <?php foreach ($pager as $p) { ?>
+                    <?php if ($i == 0) { ?>
+                        <a href="javascript:void(0)" tabindex="0" class="fg-button ui-button ui-state-default ui-state-disabled"><?= $p ?></a>
+                        <?php } else { ?>
+                        <a href="<?= $url ?><?= $p ?>" tabindex="0" class="fg-button ui-button ui-state-default"><?= $p ?></a>
+                    <?php } ?>
+                    <?php $i = $i + 1; ?>
+            <?php } ?>
+            </span>
+            <a tabindex="0" href="<?php if ($next == 0) { ?><?= $disabledurl ?><?php } else { ?><?= $url ?><?= $next ?><?php } ?>" class="next fg-button ui-button ui-state-default <?php if ($next == 0) { ?><?= $disabled ?><?php } ?>" id="DataTables_Table_0_next" >下页</a>
+            <a tabindex="0" href="<?php if ($last == 0) { ?><?= $disabledurl ?><?php } else { ?><?= $url ?><?= $last ?><?php } ?>" class="last ui-corner-tr ui-corner-br fg-button ui-button ui-state-default  <?php if ($last == 0) { ?><?= $disabled ?><?php } ?> " id="DataTables_Table_0_last" >最后</a>
+        </div>
+    </div>
+</div>
             </div>
         </div>
     </div>
@@ -70,7 +79,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">员工设置</h4>
+                <h4 class="modal-title" id="myModalLabel">帮助设置</h4>
             </div>
             <div class="modal-body">
                 <div class="span6">
@@ -78,7 +87,7 @@
                         <div class="widget-content nopadding">
                             <form action="#" method="get" class="form-horizontal">
                                 <div class="control-group">
-                                    <label class="control-label">头象（600*600）</label>
+                                    <label class="control-label">图片（600*600）</label>
                                     <div class="controls">
                                         <input type="hidden" name="id"   id="id"   class="span3" placeholder="值" value="0" />
                                         <input type="file"   class="span3" id="images"    name="file" />
@@ -92,54 +101,35 @@
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">头象（600*600）*</label>
+                                    <label class="control-label">图片（600*600）*</label>
                                     <div class="controls">
-                                        <input type="text" name="head" id="head" class="span3" placeholder="头象" />
+                                        <input type="text" name="pic" id="pic" class="span3" placeholder="图片" />
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">登陆名*</label>
+                                    <label class="control-label">标题名*</label>
                                     <div class="controls">
-                                        <input type="text" name="username" id="username" class="span3" placeholder="登陆名" />
+                                        <input type="text" name="username" id="username" class="span3" placeholder="标题名" />
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">用户名*</label>
+                                    <label class="control-label">分类*</label>
                                     <div class="controls">
-                                        <input type="text" name="realname" id="realname" class="span3" placeholder="用户名" />
+                                        <?= $this->tag->select(['helpcategory', $Helpcategory, 'using' => ['id', 'name'], 'id' => 'helpcategory_id']) ?>
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">手机*</label>
+                                    <label class="control-label">管理员*</label>
                                     <div class="controls">
+                                        <?= $admin['username'] ?>
                                         <input type="text" name="phone" id="phone" class="span3" placeholder="手机" />
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">邮件</label>
-                                    <div class="controls">
-                                        <input type="text" name="email" id="email" class="span3" placeholder="邮件" />
-                                    </div>
+                                    <label class="control-label">内容</label>
                                 </div>
-                                <div class="control-group">
-                                    <label class="control-label">微信</label>
-                                    <div class="controls">
-                                        <input type="text" name="weixin" id="weixin" class="span3" placeholder="微信" />
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label">QQ</label>
-                                    <div class="controls">
-                                        <input type="text" name="qq" id="qq" class="span3" placeholder="QQ" />
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label">状态</label>
-                                    <div class="controls">
-                                        <div  id="cstatus" class="switch" data-on-label="<i class='icon-ok icon-white'></i>" data-off-label="<i class='icon-remove'></i>">
-                                            <input type="checkbox" checked id="status" />
-                                        </div>
-                                    </div>
+                                <div class="control-group pu">
+                                    <textarea class="span6" id="brief"></textarea>
                                 </div>
                             </form>
                         </div>
@@ -369,12 +359,7 @@
         warnmsg(ret.message);
     });
 
-    function swetalert(str) {
-        swal({
-            title: str,
-            timer: 2000
-        });
-    }
+
     function newalert(str) {
         swal({
             title: str,

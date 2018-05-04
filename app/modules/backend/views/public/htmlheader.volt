@@ -15,6 +15,7 @@
     {{ stylesheet_link("/back/css/select2.css") }}
     {{ stylesheet_link("/css/bootstrapSwitch.css") }}
     {{ stylesheet_link("/css/bootstrap-pager.css") }}
+    {{ stylesheet_link("/css/bootstrap-wysihtml5.css") }}
     {{ javascript_include("/js/excanvas.min.js") }}
     {{ javascript_include("/js/jquery.min.js") }}
     {{ javascript_include("/sweetalert/sweetalert/sweetalert.min.js") }}

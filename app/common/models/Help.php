@@ -250,10 +250,10 @@ class Help extends Zmodelbase
      */
     public function initialize()
     {
-        $this->setSchema("dldh");
+
         $this->setSource("help");
-        $this->belongsTo('helpcategory_id', '\Helpcategory', 'id', ['alias' => 'Helpcategory']);
-        $this->belongsTo('user_id', '\User', 'id', ['alias' => 'User']);
+        $this->belongsTo('helpcategory_id', 'Dldh\Models\Helpcategory', 'id', ['alias' => 'Helpcategory']);
+        $this->belongsTo('user_id', 'Dldh\Models\\User', 'id', ['alias' => 'User']);
     }
 
     /**

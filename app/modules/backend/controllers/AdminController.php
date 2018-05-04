@@ -12,7 +12,6 @@ class AdminController extends ControllerBase
             $this->response->redirect('/backend/index/index');
         }
     }
-
     public function indexAction(){
         try {
             $username =   $this->request->getPost('username');
@@ -103,18 +102,21 @@ class AdminController extends ControllerBase
         $d=date("d");
         $stringdata=$y."-".$m."-".$d;
         $workercount=\Dldh\Models\Worker::count();
-        $count=\Dldh\Models\WorkerSignBack::count('dateflag="'.$stringdata.'"');
+        $conditions="dateflag=:date:";
+        $parameters=array('date'=>$stringdata);
+        $count=\Dldh\Models\WorkerSign::count([$conditions,'bind'=>$parameters]);
+
         if($count==0){
             $workerlist=\Dldh\Models\Worker::find();
             $this->db->begin();
             foreach ($workerlist as $item){
-                $worksign=new \Dldh\Models\WorkerSignBack();
+                $worksign=new \Dldh\Models\WorkerSign();
                 $worksign->setDateFlag($stringdata);
                 $worksign->setWorkerId($item->getId());
                 $worksign->setCreatAt(0);
                 $worksign->setType(1);
                 $worksign->save();
-                $worksign1=new \Dldh\Models\WorkerSignBack();
+                $worksign1=new \Dldh\Models\WorkerSign();
                 $worksign1->setDateFlag($stringdata);
                 $worksign1->setWorkerId($item->getId());
                 $worksign1->setCreatAt(0);
@@ -129,18 +131,19 @@ class AdminController extends ControllerBase
                 foreach ($workerlist as $item){
                     $singrecord=\Dldh\Models\WorkerSignBack::find("dateflag='".$stringdata."' and worker_id=".$item->getId());
                     if(!$singrecord){
-                        $worksign=new \Dldh\Models\WorkerSignBack();
+                        $worksign=new \Dldh\Models\WorkerSign();
                         $worksign->setDateFlag($stringdata);
                         $worksign->setWorkerId($item->getId());
-                        $worksign->setCreatAt(time());
+                        $worksign->setCreatAt(0);
                         $worksign->setType(1);
                         $worksign->save();
-                        $worksign=new \Dldh\Models\WorkerSignBack();
+                        $worksign=new \Dldh\Models\WorkerSign();
                         $worksign->setDateFlag($stringdata);
                         $worksign->setWorkerId($item->getId());
-                        $worksign->setCreatAt(time());
+                        $worksign->setCreatAt(0);
                         $worksign->setType(0);
                         $worksign->save();
+
                     }
                 }
                 $this->db->commit();
@@ -150,20 +153,13 @@ class AdminController extends ControllerBase
         $profiles= $this->di->get('profiler')->getProfiles();
 //遍历输出
         foreach($profiles as  $profile) {
-            echo
-            "SQL语句: ", $profile->getSQLStatement(), "\n";
-            echo
-            "开始时间: ", $profile->getInitialTime(), "\n";
-            echo
-            "结束时间: ", $profile->getFinalTime(), "\n";
-            echo
-            "消耗时间: ", $profile->getTotalElapsedSeconds(), "\n";
+            echo "SQL语句: ", $profile->getSQLStatement(), "\n";
+            echo "开始时间: ", $profile->getInitialTime(), "\n";
+            echo "结束时间: ", $profile->getFinalTime(), "\n";
+            echo "消耗时间: ", $profile->getTotalElapsedSeconds(), "\n";
         }
-
 //直接获取最后一条sql语句
         echo $this->di->get('profiler')->getLastProfile()->getSQLStatement();
-
-
         $this->view->disable();
 
     }

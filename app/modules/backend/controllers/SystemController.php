@@ -69,8 +69,6 @@ class SystemController extends ControllerLoginBase
 
     public function usersAction(){
 
-      //     $this->view->setVar('list',\Dldh\Models\User::find() );
-
         $page =intval($this->request->get('page'));
         $limit =3;
         $page = $page > 0 ? $page: 1 ;
@@ -122,29 +120,57 @@ class SystemController extends ControllerLoginBase
             if($data){
                 $id=$data['id'];
 
-                $conditons='id<>:id: and username=:username:';
-                $parameters=array("id"=>$data['id'],'username'=>$data['username']);
-                $usr=\Dldh\Models\User::findFirst([
-                    $conditons,
-                    'bind' => $parameters,
-                ]);
-                if($usr){
-                    exit($this->ajax_return( '已有此用户名',0 ));
-                }
-                $usr=\Dldh\Models\User::findFirst('id='.$id);
-
-                if($usr){
+                if($id>0){
+                    $conditons='id<>:id: and username=:username:';
+                    $parameters=array("id"=>$data['id'],'username'=>$data['username']);
+                    $usr=\Dldh\Models\User::findFirst([
+                        $conditons,
+                        'bind' => $parameters,
+                    ]);
+                    if($usr){
+                        exit($this->ajax_return( '已有此用户名',0 ));
+                    }
+                    $usr=\Dldh\Models\User::findFirst('id='.$id);
+                    if($usr){
+                        $usr->setEnabled($data['enabled']);
+                        $usr->setEmail($data['email']);
+                        $usr->setHead($data['head']);
+                        $usr->setUsername($data['username']);
+                        $re=$usr->update();
+                        if($re){
+                            exit($this->ajax_return( '修改成功',1 ));
+                        }else{
+                            $error="";
+                            $messages = $usr->getMessages();
+                            foreach ($messages as $message) {
+                                $error.=$message .", ";
+                            }
+                            exit($this->ajax_return( $error,0 ));
+                        }
+                    }else{
+                        exit($this->ajax_return( '无此记录',0 ));
+                    }
+                }else{
+                    $conditons=' username=:username:';
+                    $parameters=array('username'=>$data['username']);
+                    $usr=\Dldh\Models\User::findFirst([
+                        $conditons,
+                        'bind' => $parameters,
+                    ]);
+                    if($usr){
+                        exit($this->ajax_return( '已有此用户名',0 ));
+                    }
+                    $usr=new \Dldh\Models\User();
                     $usr->setEnabled($data['enabled']);
                     $usr->setEmail($data['email']);
                     $usr->setHead($data['head']);
+                    $usr->setPassword(md5('12345678'));
                     $usr->setUsername($data['username']);
+                    $re=$usr->save();
 
-
-                    $re=$usr->update();
                     if($re){
-                        exit($this->ajax_return( '修改成功',1 ));
+                        exit($this->ajax_return( '增加成功(密码为:12345678)',1 ));
                     }else{
-
                         $error="";
                         $messages = $usr->getMessages();
                         foreach ($messages as $message) {
@@ -152,10 +178,6 @@ class SystemController extends ControllerLoginBase
                         }
                         exit($this->ajax_return( $error,0 ));
                     }
-
-
-                }else{
-                    exit($this->ajax_return( '无此记录',0 ));
                 }
             }else{
                 exit($this->ajax_return( '非法请求',0 ));
@@ -173,27 +195,22 @@ class SystemController extends ControllerLoginBase
             $data=$this->request->getPost();
             if($data){
                 $id=$data['id'];
-
-                $usr=\Dldh\Models\User::findFirst('id='.$id[0]);
-
+                $usr=\Dldh\Models\User::findFirst('id='.$id);
                 if($usr){
-                    $usr->setEnabled($data['enable']);
-                    $re=$usr->update();
+
+                    $usr->setEnabled($data['enabled']);
+                    $re=$usr->save();
 
                     if($re){
                         exit($this->ajax_return( '修改成功',1 ));
                     }else{
-
                         $error="";
                         $messages = $usr->getMessages();
-
                         foreach ($messages as $message) {
                             $error.=$message .", ";
                         }
                         exit($this->ajax_return( $error,0 ));
                     }
-
-
                 }else{
                     exit($this->ajax_return( '无此记录',0 ));
                 }

@@ -38,7 +38,7 @@ class WorkersController extends ControllerLoginBase
             "bind" => $parameters,
             'limit' => array('number' => $limit, 'offset' => $offset) ))->toArray();
 
-        $page_r=null;
+        $page_r=[];
         for ($x=$page; $x<=$endpage; $x++) {
             $page_r[] =$x;
         }
@@ -58,7 +58,6 @@ class WorkersController extends ControllerLoginBase
         );
     }
     public function statusAction(){
-
         try{
             if($this->request->getPost()){
                 $id=$this->request->getPost('id');
@@ -87,7 +86,6 @@ class WorkersController extends ControllerLoginBase
                if($newcon){
                    exit($this->ajax_return('用户名已用','0'));
                }
-
                $con= \Dldh\Models\Worker::findFirst('id='.$d['id']);
                if($con){
                    $con->setEmail($d['email']);

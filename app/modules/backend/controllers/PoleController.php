@@ -99,7 +99,7 @@ class PoleController extends ControllerLoginBase
             $conditions,
             "bind" => $parameters,
             'limit' => array('number' => $limit, 'offset' => $offset) ));
-        $arr=null;
+        $arr=[];
         foreach ($list as $item){
             $arr[]   = ['id'=>$item->getId(),
                 'name' => $item->getName(),
