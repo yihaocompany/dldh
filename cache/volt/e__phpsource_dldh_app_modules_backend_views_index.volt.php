@@ -16,13 +16,17 @@
     <?= $this->tag->stylesheetLink('/css/bootstrapSwitch.css') ?>
     <?= $this->tag->stylesheetLink('/css/bootstrap-pager.css') ?>
     <?= $this->tag->stylesheetLink('/css/bootstrap-wysihtml5.css') ?>
+    <?= $this->tag->stylesheetLink('/css/jquery.mloading.css') ?>
     <?= $this->tag->javascriptInclude('/js/excanvas.min.js') ?>
     <?= $this->tag->javascriptInclude('/js/jquery.min.js') ?>
     <?= $this->tag->javascriptInclude('/sweetalert/sweetalert/sweetalert.min.js') ?>
     <?= $this->tag->javascriptInclude('/js/bootstrap-paginator.min.js') ?>
     <?= $this->tag->javascriptInclude('/js/bootstrapSwitch.js') ?>
+    <?= $this->tag->javascriptInclude('/js/jquery.mloading.js') ?>
+
 </head>
 <body>
+
  
 <div id="header">
     <h1><a href="dashboard.html">电力后台 Admin</a></h1>
@@ -115,28 +119,31 @@
 <?= $this->tag->javascriptInclude('/js/matrix.tables.js') ?>
 <?= $this->tag->javascriptInclude('/js/bootstrap-pager.js') ?>
 <?= $this->tag->javascriptInclude('/sweetalert/sweetalert/sweetalert.min.js') ?>
+<?= $this->tag->javascriptInclude('/js/bootstrap-pager.js') ?>
+<?= $this->tag->javascriptInclude('/js/fakeloader.js') ?>
 <script type="text/javascript">
-    // This function is called from the pop-up menus to transfer to
-    // a different page. Ignore if the value returned is a null string:
     function goPage (newURL) {
-        // if url is empty, skip the menu dividers and reset the menu selection to default
         if (newURL != "") {
-            // if url is "-", it is this page -- reset the menu:
             if (newURL == "-" ) {
                 resetMenu();
             }
-            // else, send page to designated URL
             else {
                 document.location.href = newURL;
             }
         }
     }
-
-    // resets the menu selection upon entry to this page:
     function resetMenu() {
         document.gomenu.selector.selectedIndex = 2;
     }
+    $(element).mLoading({
+        text:"更新中",
+        icon:"/images/loading.gif",
+        html:false,
+        content:"",
+        mask:true
+    });
 </script>
+
 </body>
 </html>
 

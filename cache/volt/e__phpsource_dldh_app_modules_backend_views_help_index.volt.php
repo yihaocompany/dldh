@@ -35,15 +35,15 @@
                                     <td><?= $item->User->username ?>  </td>
                                     <td><?= $item->url ?>  </td>
                                     <td class="center">
-                                        <button class="btn btn-primary btn-mini"   data-toggle="modal" id="<?= $item['id'] ?>" data-target="#myModal" onclick="showmodal(this)">修改</button>
+                                        <input type="hidden" id="category_<?= $item->id ?>" value="<?= $item->helpcategory_id ?>">
+                                        <input type="hidden" id="brief_<?= $item->id ?>" value="<?= $item->brief ?>">
+                                        <button class="btn btn-primary btn-mini" data-toggle="modal" id="<?= $item->id ?>" data-target="#myModal" onclick="showmodal(this)">修改</button>
                                     </td>
                                 </tr>
                             <?php } ?>
                             </tbody>
                         </table>
-
                     </div>
-
                 </div>
                 <?php $disabled = 'ui-state-disabled'; ?>
 <?php $disabledurl = 'javascript:void(0)'; ?>
@@ -56,9 +56,9 @@
                 <?php $i = 0; ?>
                 <?php foreach ($pager as $p) { ?>
                     <?php if ($i == 0) { ?>
-                        <a href="javascript:void(0)" tabindex="0" class="fg-button ui-button ui-state-default ui-state-disabled"><?= $p ?></a>
+                        <a href="javascript:void(0)" tabindex="0" class="fg-button ui-button ui-state-default ui-state-disabled"><?= $p[0] ?></a>
                         <?php } else { ?>
-                        <a href="<?= $url ?><?= $p ?>" tabindex="0" class="fg-button ui-button ui-state-default"><?= $p ?></a>
+                        <a href="<?= $url ?><?= $p[1] ?>" tabindex="0" class="fg-button ui-button ui-state-default"><?= $p[0] ?></a>
                     <?php } ?>
                     <?php $i = $i + 1; ?>
             <?php } ?>
@@ -109,20 +109,26 @@
                                 <div class="control-group">
                                     <label class="control-label">标题名*</label>
                                     <div class="controls">
-                                        <input type="text" name="username" id="username" class="span3" placeholder="标题名" />
+                                        <input type="text" name="title" id="title" class="span3" placeholder="标题名" />
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">摘自url</label>
+                                    <div class="controls">
+                                        <input type="text" name="url" id="url" class="span3" value="http://" placeholder="搞自url http://" />
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">分类*</label>
                                     <div class="controls">
-                                        <?= $this->tag->select(['helpcategory', $Helpcategory, 'using' => ['id', 'name'], 'id' => 'helpcategory_id']) ?>
+                                        <?= $this->tag->select(['helpcategory_id', $Helpcategory, 'using' => ['id', 'name'], 'id' => 'helpcategory_id']) ?>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">管理员*</label>
                                     <div class="controls">
                                         <?= $admin['username'] ?>
-                                        <input type="text" name="phone" id="phone" class="span3" placeholder="手机" />
+                                        <input type="hidden" name="user_id" id="user_id" class="span3" value="<?= $admin['id'] ?>" />
                                     </div>
                                 </div>
                                 <div class="control-group">
@@ -150,65 +156,35 @@
     function warnmsg(varstring){
         $('#msg').html(varstring);
     }
-    $('.switch').on('switch-change', function (e, data) {
-        let $el = $(data.el), value = data.value;
-        let status=value?1:0;
-        let strid=$el[0].id;
-        let reg = new RegExp(/\d+/, 'g');
-        let newstrid=reg.exec(strid);
-        $.ajax({
-            async: true,
-            type : "post",
-            url : '/backend/workers/status',
-            data : {
-                "id" : newstrid ,'status': status
-            },
-            dataType : 'json',
-            success : function(res) {
-                if ( res.code !=1) {
-                    newalert(res.message);
-                } else {
-                    newalert(res.message);
-                }
-            }
-        });
-    });
+
     function to_submit() {
-        if($('#head').val()==''){
+        if($('#pic').val()==''){
             warnmsg("请上传头象");
             return;
         }
-        if($('#username').val()==''){
-            warnmsg("请输入登陆名");
+        if($('#title').val()==''){
+            warnmsg("请输入标题");
             return;
         }
-        if($('#realname').val()==''){
-            warnmsg("请输入真实姓名");
+        if($('#helpcategory_id').val()==''){
+            warnmsg("请选择帮助分类");
             return;
         }
-        if($('#phone').val()==''){
-            warnmsg("请输入手机号");
+        if($('#brief').val()==''){
+            warnmsg("请输入内容");
             return;
-        }
-        let status=1;
-        if($("#status").attr('checked')=='checked'){
-            status=1;
-        }else{
-            status=0;
         }
         $.ajax({
             type : "POST",
-            url : '/backend/workers/updateworker',
+            url : '/backend/help/updatehelp',
             data : {
                 "id" : $("#id").val(),
-                'head':$('#head').val(),
-                'username':$('#username').val(),
-                'realname':$("#realname").val(),
-                'phone':$('#phone').val(),
-                'email': $('#email').val(),
-                'weixin':  $('#weixin').val(),
-                'qq': $('#qq').val(),
-                'status':status
+                'pic':$('#pic').val(),
+                'title':$('#title').val(),
+                'brief':$("#brief").val(),
+                'helpcategory_id':$('#helpcategory_id').val(),
+                'user_id': <?= $admin['id'] ?>,
+                'url': $('#url').val()
             },
             dataType : 'json',
             success : function(result) {
@@ -216,58 +192,27 @@
                     warnmsg(result.message);
                     let v_id=$("#id").val();
                     if(v_id>0){
-                        $('#value_'+v_id).text($('#value').val());
-                        $('#txt_'+v_id).text($('#txt').val());
+                        $('#category_'+v_id).val($('#helpcategory_id').val());
+                        $('#brief_'+v_id).val($('#brief').val());
                         $("#tablelist").find("tr").each(function(i){
                             $(this).children('td').each(function(j){
                                 if(j==0){
                                     if( JSON.parse(v_id)== JSON.parse($(this).text())){
                                         let tablelinenumber=i-1;
                                         let obj="#tablelist tbody tr:eq("+tablelinenumber+") ";
-                                        $(obj+"  td:eq(1) img:eq(0)").attr('src',$('#head').val());
-                                        $(obj+"  td:eq(2)").text( $('#username').val());
-                                        $(obj+"  td:eq(3)").text( $('#realname').val());
-                                        $(obj+"  td:eq(4)").text( $('#phone').val());
-                                        $(obj+"  td:eq(5)").text( $('#email').val());
-                                        $(obj+"  td:eq(6)").text( $('#weixin').val());
-                                        $(obj+"  td:eq(7)").text(  $('#qq').val());
-                                        $('#switch_'+$("#id").val()).bootstrapSwitch('setState', status);
+                                        $(obj+"  td:eq(1) img:eq(0)").attr('src',$('#pic').val());
+                                        $(obj+"  td:eq(2)").text( $('#title').val());
+                                        $(obj+"  td:eq(3)").text($("#helpcategory_id").find("option:selected").text());
+                                        $(obj+"  td:eq(5)").text( $('#url').val());
                                     }
                                 }
                             });
                         });
+                        $('#myModal').modal('hide');
                     }else{
-                        location.href="/backend/workers/index";
-
-                        let schecked='checked';
-                        if(status==1){
-                            schecked='checked';
-                        }else{
-                            schecked='';
-                        }
-                        let  rowIndex = $("#tablelist tr:last").attr("data-row");
-                        if (rowIndex == "" || rowIndex == null) {
-                            rowIndex = parseInt(1);
-                        } else {
-                            rowIndex = parseInt(rowIndex) + 1;
-                        }
-                        let  htmlList = '<tr class=\'odd gradeX\'>';
-                        htmlList += '<td>'+result.data.dataid+'</td>';
-                        htmlList += '<td><img src='+$('#head').val()+' width=50/></td>';
-                        htmlList += '<td>' +$('#username').val()+ '</td>';
-                        htmlList += '<td>' +$('#realname').val()+ '</td>';
-                        htmlList += '<td>' +$('#phone').val()+ '</td>';
-                        htmlList += '<td>' +$('#email').val()+ '</td>';
-                        htmlList += '<td>' +$('#weixin').val()+ '</td>';
-                        htmlList += '<td>' +$('#qq').val()+ '</td>';
-                        htmlList += '<td><div class=\'switch\'  id=\'switch_'+$('#head').val()+'\' data-on-label="<i class=\'icon-ok icon-white\'></i>" data-off-label=\"<i class=\'icon-remove\'></i>\">';
-                        htmlList += '<input type=checkbox ' +schecked+ ' id=ch_'+$('#head').val()+'/>';
-                        htmlList +='</div></td>';
-                        htmlList +='<td class=center><button class=\'btn btn-primary btn-mini\'  data-toggle=modal id='+ result.data.dataid  +' data-target=#myModal onclick=showmodal(this)>修改</button></td>';
-                        htmlList +='</tr>';
-                        $("#tablelist tr:last").after(htmlList);
+                        location.href="/backend/help/index";
                     }
-                    $('#myModal').modal('hide');
+
                 } else {
                     warnmsg(result.message);
                 }
@@ -277,6 +222,10 @@
     function showmodal(obj) {
         if(obj.id>0){
             $("#id").val(obj.id);
+            let helpcategory_id=  $("#category_"+obj.id).val();
+            $('#helpcategory_id').val(helpcategory_id);
+            let brief=  $("#brief_"+obj.id).val();
+            $('#brief').val(brief);
             $("#tablelist").find("tr").each(function(i){
                 $(this).children('td').each(function(j){
                     if(j==0){
@@ -284,38 +233,26 @@
                             let tablelinenumber=i-1;
                             let obj="#tablelist tbody tr:eq("+tablelinenumber+") ";
                             let img=   $(obj+"   td:eq(1) img:eq(0)").attr('src');
-                            $('#head').val(img);
+                            $('#pic').val(img);
                             $("#image_thumb").attr('src',img);
-                            let username=  $(obj+"  td:eq(2)").text();
-                            $('#username').val(username);
-                            let realname=  $(obj+"  td:eq(3)").text();
-                            $('#realname').val(realname);
-                            let phone=  $(obj+"  td:eq(4)").text();
-                            $('#phone').val(phone);
-                            let email=  $(obj+"  td:eq(5)").text();
-                            $('#email').val(email);
-                            let weixin= $(obj+"  td:eq(6)").text();
-                            $('#weixin').val(weixin);
-                            let qq= $(obj+"  td:eq(7)").text();
-                            $('#qq').val(qq);
-                            if($(obj+"  td:eq(8)").find('input').attr('checked')=='checked'){
-                                $('#cstatus').bootstrapSwitch('setState', true);
-                            }else{
-                                $('#cstatus').bootstrapSwitch('setState', false);
-                            }
+                            let title=  $(obj+"  td:eq(2)").text();
+                            $('#title').val(title);
+
+                            let url=  $(obj+"  td:eq(5)").text();
+                            $('#url').val(url);
+
                         }
                     }
                 });
             });
         }else{
             $('#id').val("");
-            $('#head').val("");
-            $('#username').val("");
-            $('#realname').val("");
+            $('#pic').val("");
+            $('#title').val("");
+            $('#helpcategory_id').val("");
             $('#phone').val("");
-            $('#email').val("");
-            $('#weixin').val("");
-            $('#qq').val("");
+            $('#brief').val("");
+            $('#url').val("");
         }
     }
     $("#upbutton").click(function(){
@@ -339,12 +276,11 @@
                     $.ajax({
                         type : "POST",
                         url : '/home/index/upload',
-                        data :      {message:pic, filename:fname[0], filetype:fname[1], filesize:fi.size, 'head':'/head/','worker': $("#id").val()},
+                        data :      {message:pic, filename:fname[0], filetype:fname[1], filesize:fi.size, 'head':'/help/','addid': $("#id").val()},
                         dataType : 'json',
                         success : function(res) {
                             if ( res.code ==1) {
-                                $('#head').val(res.data.picurl);
-
+                                $('#pic').val(res.data.picurl);
                                 ret={message:'上传成功'}
                             } else {
                                 ret={message:'上传失败'}

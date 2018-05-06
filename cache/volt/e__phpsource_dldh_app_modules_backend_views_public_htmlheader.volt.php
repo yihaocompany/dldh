@@ -16,10 +16,13 @@
     <?= $this->tag->stylesheetLink('/css/bootstrapSwitch.css') ?>
     <?= $this->tag->stylesheetLink('/css/bootstrap-pager.css') ?>
     <?= $this->tag->stylesheetLink('/css/bootstrap-wysihtml5.css') ?>
+    <?= $this->tag->stylesheetLink('/css/jquery.mloading.css') ?>
     <?= $this->tag->javascriptInclude('/js/excanvas.min.js') ?>
     <?= $this->tag->javascriptInclude('/js/jquery.min.js') ?>
     <?= $this->tag->javascriptInclude('/sweetalert/sweetalert/sweetalert.min.js') ?>
     <?= $this->tag->javascriptInclude('/js/bootstrap-paginator.min.js') ?>
     <?= $this->tag->javascriptInclude('/js/bootstrapSwitch.js') ?>
+    <?= $this->tag->javascriptInclude('/js/jquery.mloading.js') ?>
+
 </head>
 <body>

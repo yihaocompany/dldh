@@ -69,9 +69,9 @@
                 <?php $i = 0; ?>
                 <?php foreach ($pager as $p) { ?>
                     <?php if ($i == 0) { ?>
-                        <a href="javascript:void(0)" tabindex="0" class="fg-button ui-button ui-state-default ui-state-disabled"><?= $p ?></a>
+                        <a href="javascript:void(0)" tabindex="0" class="fg-button ui-button ui-state-default ui-state-disabled"><?= $p[0] ?></a>
                         <?php } else { ?>
-                        <a href="<?= $url ?><?= $p ?>" tabindex="0" class="fg-button ui-button ui-state-default"><?= $p ?></a>
+                        <a href="<?= $url ?><?= $p[1] ?>" tabindex="0" class="fg-button ui-button ui-state-default"><?= $p[0] ?></a>
                     <?php } ?>
                     <?php $i = $i + 1; ?>
             <?php } ?>

@@ -4,11 +4,8 @@ namespace Dldh\Modules\Backend\Controllers;
 
 class HelpController extends ControllerLoginBase
 {
-
     public function indexAction()
     {
-
-
         $page =intval($this->request->get('page'));
         $limit =3;
         $page = $page > 0 ? $page: 1 ;
@@ -34,26 +31,42 @@ class HelpController extends ControllerLoginBase
             'limit' => array('number' => $limit, 'offset' => $offset) ));
         $page_r=[];
         for ($x=$page; $x<=$endpage; $x++) {
-            $page_r[] =$x;
+            $page_r[] =[ $x,'?page='.$x.'&search='.$search];
         }
         $page_rang=$page_r;
         $this->view->setVars(
             array(
                 'Helpcategory'=>\Dldh\Models\Helpcategory::find(),
-                'list'=>$list,
-                'totalrows'=>$totalRows,
-                'pager'=>$page_rang,
-                'current'=>$page,
-                'first'=>$first,
-                'last'=>$listpage,
-                'pre'=>$prepage,
-                'next'=>$nextpage,
-                'url'=>"/backend/help/index/?search=".$search.'&page=',
+                'list'        =>$list,
+                'totalrows'   =>$totalRows,
+                'pager'       =>$page_rang,
+                'current'     =>$page,
+                'first'       =>$first,
+                'last'        =>$listpage,
+                'pre'         =>$prepage,
+                'next'        =>$nextpage,
+                'url'         =>"/backend/help/index/"
             )
         );
-
     }
 
+
+    public  function updatehelpAction(){
+        try{
+            $request=$this->request;
+            if($request->isAjax() &&$request->isPost()){
+                $d=$request->getPost();
+                $mode=new \Dldh\Models\Help();
+                //exit($this->ajax_return('$mode','0'));
+                exit($this->Modelupdate($mode,$d,'id'));
+            }else{
+                exit($this->ajax_return('请求参数错','0'));
+            }
+
+        }catch (\Exception $e){
+            exit($this->ajax_return('请求参数错','0'));
+        }
+    }
 
     public function updatecategoryAction(){
         try{
@@ -80,7 +93,6 @@ class HelpController extends ControllerLoginBase
                             exit($this->ajax_return('无此记录','0'));
                         }
                     }else{
-
                         $conditions=" name=:name:";
                         $parameters=array('name'=>$d['name']);
                         if(\Dldh\Models\Helpcategory::findFirst([$conditions,'bind'=>$parameters])){
@@ -140,7 +152,7 @@ class HelpController extends ControllerLoginBase
 
         $page_r=[];
         for ($x=$page; $x<=$endpage; $x++) {
-            $page_r[] =$x;
+            $page_r[] =[ $x,'?page='.$x.'&search='.$search];
         }
         $page_rang=$page_r;
         $this->view->setVars(
@@ -153,7 +165,7 @@ class HelpController extends ControllerLoginBase
                 'last'=>$listpage,
                 'pre'=>$prepage,
                 'next'=>$nextpage,
-                'url'=>"/backend/help/category/?search=".$search.'&page=',
+                'url'=>"/backend/help/category/",
             )
         );
 

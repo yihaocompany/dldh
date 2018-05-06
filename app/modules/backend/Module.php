@@ -30,16 +30,6 @@ class Module implements ModuleDefinitionInterface
      *
      * @param DiInterface $di
      */
-    /**
-     * Registers services related to the module
-     *
-     * @param DiInterface $di
-     */
-    /**
-     * Registers services related to the module
-     *
-     * @param DiInterface $di
-     */
     public function registerServices(DiInterface $di)
     {
         /**

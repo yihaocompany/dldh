@@ -9,9 +9,9 @@
                 {% set i=0 %}
                 {% for p in pager %}
                     {% if i==0  %}
-                        <a href="javascript:void(0)" tabindex="0" class="fg-button ui-button ui-state-default ui-state-disabled">{{ p }}</a>
+                        <a href="javascript:void(0)" tabindex="0" class="fg-button ui-button ui-state-default ui-state-disabled">{{ p[0] }}</a>
                         {% else %}
-                        <a href="{{ url }}{{ p }}" tabindex="0" class="fg-button ui-button ui-state-default">{{ p }}</a>
+                        <a href="{{ url }}{{ p[1] }}" tabindex="0" class="fg-button ui-button ui-state-default">{{ p[0] }}</a>
                     {% endif  %}
                     {% set i=i+1 %}
             {% endfor %}

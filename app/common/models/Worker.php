@@ -379,7 +379,7 @@ class Worker extends Zmodelbase
     public function initialize(){
         $this->setSource("worker");
         $this->hasMany('id', 'Dldh\Models\AuthGroupAccess', 'uid', ['alias' => 'AuthGroupAccess']);
-        $this->hasMany('id', 'Dldh\Models\Notice', 'worker_id', ['alias' => 'Notice']);
+        $this->hasMany('id', 'Dldh\Models\NoticeWorker', 'worker_id', ['alias' => 'NoticeWorker']);
         $this->hasMany('id', 'Dldh\Models\NoticeCommit', 'worker_id', ['alias' => 'NoticeCommit']);
         $this->hasMany('id', 'Dldh\Models\Pole', 'worker_id', ['alias' => 'Pole']);
         $this->hasMany('id', 'Dldh\Models\PoleComplain', 'worker_id', ['alias' => 'PoleComplain']);

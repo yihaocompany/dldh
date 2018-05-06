@@ -43,9 +43,9 @@ class Notice extends Zmodelbase
     /**
      *
      * @var integer
-     * @Column(column="worker_id", type="integer", length=11, nullable=true)
+     * @Column(column="notice_id", type="integer", length=11, nullable=true)
      */
-    protected $worker_id;
+    protected $notice_id;
 
     /**
      * Method to set the value of field id
@@ -118,9 +118,9 @@ class Notice extends Zmodelbase
      * @param integer $worker_id
      * @return $this
      */
-    public function setWorkerId($worker_id)
+    public function setNoticeID($notice_id)
     {
-        $this->worker_id = $worker_id;
+        $this->notice_id = $notice_id;
 
         return $this;
     }
@@ -180,9 +180,9 @@ class Notice extends Zmodelbase
      *
      * @return integer
      */
-    public function getWorkerId()
+    public function getNoticeID()
     {
-        return $this->worker_id;
+        return $this->notice_id;
     }
 
     /**
@@ -190,11 +190,10 @@ class Notice extends Zmodelbase
      */
     public function initialize()
     {
-        $this->setSchema("dldh");
         $this->setSource("notice");
-        $this->hasMany('id', 'NoticeCommit', 'notice_id', ['alias' => 'NoticeCommit']);
-        $this->belongsTo('user_id', '\User', 'id', ['alias' => 'User']);
-        $this->belongsTo('worker_id', '\Worker', 'id', ['alias' => 'Worker']);
+        $this->hasMany('id', 'Dldh\Models\NoticeCommit', 'notice_id', ['alias' => 'NoticeCommit']);
+        $this->belongsTo('user_id', 'Dldh\Models\User', 'id', ['alias' => 'User']);
+        $this->hasMany('id', 'Dldh\Models\NoticeWorker', 'notice_id', ['alias' => 'NoticeWorker']);
     }
 
     /**
@@ -243,7 +242,7 @@ class Notice extends Zmodelbase
             'content' => 'content',
             'user_id' => 'user_id',
             'created_at' => 'created_at',
-            'worker_id' => 'worker_id'
+            'notice_id' => 'notice_id'
         ];
     }
 

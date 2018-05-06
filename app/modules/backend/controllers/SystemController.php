@@ -93,9 +93,9 @@ class SystemController extends ControllerLoginBase
             "bind" => $parameters,
             'limit' => array('number' => $limit, 'offset' => $offset) ));
 
-        $page_r=null;
+        $page_r=[];
         for ($x=$page; $x<=$endpage; $x++) {
-            $page_r[] =$x;
+            $page_r[] =[ $x,'?page='.$x.'&search='.$search];
         }
         $page_rang=$page_r;
         $this->view->setVars(
@@ -108,9 +108,10 @@ class SystemController extends ControllerLoginBase
                 'last'=>$listpage,
                 'pre'=>$prepage,
                 'next'=>$nextpage,
-                'url'=>"/backend//system/users/?search=".$search.'&page=',
+                'url'=>"/backend//system/users/",
             )
         );
+
     }
 
 

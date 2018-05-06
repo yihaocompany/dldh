@@ -40,7 +40,7 @@ class WorkersController extends ControllerLoginBase
 
         $page_r=[];
         for ($x=$page; $x<=$endpage; $x++) {
-            $page_r[] =$x;
+            $page_r[] =[ $x,'?page='.$x.'&search='.$search];
         }
         $page_rang=$page_r;
         $this->view->setVars(
@@ -53,9 +53,10 @@ class WorkersController extends ControllerLoginBase
               'last'=>$listpage,
               'pre'=>$prepage,
               'next'=>$nextpage,
-                'url'=>"/backend/workers/index/?search=".$search.'&page=',
+                'url'=>"/backend/workers/index/",
         )
         );
+
     }
     public function statusAction(){
         try{

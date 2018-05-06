@@ -35,8 +35,9 @@
                                     <td>{{ item.User.username}}  </td>
                                     <td>{{ item.url}}  </td>
                                     <td class="center">
-                                        <input type="text" id="category_{{ item.id }}" value="{{  item.helpcategory_id }}">
-                                        <button class="btn btn-primary btn-mini"   data-toggle="modal" id="{{ item['id'] }}" data-target="#myModal" onclick="showmodal(this)">修改</button>
+                                        <input type="hidden" id="category_{{ item.id }}" value="{{ item.helpcategory_id }}">
+                                        <input type="hidden" id="brief_{{ item.id }}" value="{{ item.brief }}">
+                                        <button class="btn btn-primary btn-mini" data-toggle="modal" id="{{ item.id }}" data-target="#myModal" onclick="showmodal(this)">修改</button>
                                     </td>
                                 </tr>
                             {% endfor  %}
@@ -90,9 +91,9 @@
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">搞自url</label>
+                                    <label class="control-label">摘自url</label>
                                     <div class="controls">
-                                        <input type="text" name="url" id="url" class="span3" value="http://" placeholder="搞自url" />
+                                        <input type="text" name="url" id="url" class="span3" value="http://" placeholder="搞自url http://" />
                                     </div>
                                 </div>
                                 <div class="control-group">
@@ -153,14 +154,14 @@
         }
         $.ajax({
             type : "POST",
-            url : '/backend/workers/updateworker',
+            url : '/backend/help/updatehelp',
             data : {
                 "id" : $("#id").val(),
                 'pic':$('#pic').val(),
                 'title':$('#title').val(),
                 'brief':$("#brief").val(),
                 'helpcategory_id':$('#helpcategory_id').val(),
-                'user_id': $('#user_id').val(),
+                'user_id': {{ admin['id'] }},
                 'url': $('#url').val()
             },
             dataType : 'json',
@@ -169,8 +170,8 @@
                     warnmsg(result.message);
                     let v_id=$("#id").val();
                     if(v_id>0){
-                        $('#value_'+v_id).text($('#value').val());
-                        $('#txt_'+v_id).text($('#txt').val());
+                        $('#category_'+v_id).val($('#helpcategory_id').val());
+                        $('#brief_'+v_id).val($('#brief').val());
                         $("#tablelist").find("tr").each(function(i){
                             $(this).children('td').each(function(j){
                                 if(j==0){
@@ -185,10 +186,11 @@
                                 }
                             });
                         });
+                        $('#myModal').modal('hide');
                     }else{
-                        location.href="/backend/workers/index";
+                        location.href="/backend/help/index";
                     }
-                    $('#myModal').modal('hide');
+
                 } else {
                     warnmsg(result.message);
                 }
@@ -198,6 +200,10 @@
     function showmodal(obj) {
         if(obj.id>0){
             $("#id").val(obj.id);
+            let helpcategory_id=  $("#category_"+obj.id).val();
+            $('#helpcategory_id').val(helpcategory_id);
+            let brief=  $("#brief_"+obj.id).val();
+            $('#brief').val(brief);
             $("#tablelist").find("tr").each(function(i){
                 $(this).children('td').each(function(j){
                     if(j==0){
@@ -209,34 +215,22 @@
                             $("#image_thumb").attr('src',img);
                             let title=  $(obj+"  td:eq(2)").text();
                             $('#title').val(title);
-                            let realname=  $(obj+"  td:eq(3)").text();
-                            $('#realname').val(realname);
-                            let phone=  $(obj+"  td:eq(4)").text();
-                            $('#phone').val(phone);
-                            let email=  $(obj+"  td:eq(5)").text();
-                            $('#email').val(email);
-                            let weixin= $(obj+"  td:eq(6)").text();
-                            $('#weixin').val(weixin);
-                            let qq= $(obj+"  td:eq(7)").text();
-                            $('#qq').val(qq);
-                            if($(obj+"  td:eq(8)").find('input').attr('checked')=='checked'){
-                                $('#cstatus').bootstrapSwitch('setState', true);
-                            }else{
-                                $('#cstatus').bootstrapSwitch('setState', false);
-                            }
+
+                            let url=  $(obj+"  td:eq(5)").text();
+                            $('#url').val(url);
+
                         }
                     }
                 });
             });
         }else{
             $('#id').val("");
-            $('#head').val("");
-            $('#username').val("");
-            $('#realname').val("");
+            $('#pic').val("");
+            $('#title').val("");
+            $('#helpcategory_id').val("");
             $('#phone').val("");
-            $('#email').val("");
-            $('#weixin').val("");
-            $('#qq').val("");
+            $('#brief').val("");
+            $('#url').val("");
         }
     }
     $("#upbutton").click(function(){
@@ -260,12 +254,11 @@
                     $.ajax({
                         type : "POST",
                         url : '/home/index/upload',
-                        data :      {message:pic, filename:fname[0], filetype:fname[1], filesize:fi.size, 'head':'/head/','worker': $("#id").val()},
+                        data :      {message:pic, filename:fname[0], filetype:fname[1], filesize:fi.size, 'head':'/help/','addid': $("#id").val()},
                         dataType : 'json',
                         success : function(res) {
                             if ( res.code ==1) {
-                                $('#head').val(res.data.picurl);
-
+                                $('#pic').val(res.data.picurl);
                                 ret={message:'上传成功'}
                             } else {
                                 ret={message:'上传失败'}

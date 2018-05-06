@@ -35,16 +35,16 @@ class IndexController extends ControllerBase
             //图片类型在传输过程中对应的头信息
             $message = $_POST['message'];
             //接收以base64编码的图片数据
-            $filename = $_POST['filename'];
+            $filename =  $_POST['filename'];
             //接收文件名称
-            $ftype = $_POST['filetype'];
-            $path = $_POST['head'];
-            $worker=$_POST['worker'];
+            $ftype  = $_POST['filetype'];
+            $path   = isset($_POST['head'])?$_POST['head']:$_POST['addid'];
+            $worker = isset($_POST['worker'])?$_POST['worker']:$_POST['addid'];
             //接收文件类型
             //首先将头信息去掉，然后解码剩余的base64编码的数据
             $message = base64_decode(substr($message,strlen('data:image/'.$imgtype[strtolower($ftype)].';base64,')));
             $filename = $filename.".".$ftype;
-            $furl = __DIR__ . '/../../../../public/upload'.$path;
+            $furl = BASE_PATH . '/public/upload'.$path;
             //开始写文件
             $newfilename=time().$worker.".".$ftype;
             $file = fopen($furl.$newfilename,"w");

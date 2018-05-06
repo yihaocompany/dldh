@@ -13,7 +13,7 @@
                     <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
                         <h5>塔杆</h5>
                     </div>
-                    <div id="loading"></div>
+                    <div id="loading" class="span12" style="text-align: center"></div>
                     <div class="widget-content nopadding" id="ipage"></div>
                     <div id="mypagers"></div>
                 </div>
@@ -21,8 +21,6 @@
         </div>
     </div>
 </div>
-
-<!-- 模态框（Modal） -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -38,12 +36,24 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="button" class="btn btn-primary" id="mysubmit" onclick="mysubmit()">提交更改</button>
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
+        </div>
+    </div>
 </div>
 <script>
+    function sleep(numberMillis) {
+        let  now = new Date();
+        let exitTime = now.getTime() + numberMillis;
+        while (true) {
+            now = new Date();
+            if (now.getTime() > exitTime)
+                return;
+        }
+    }
     pagetables(1);
+    $('#ipage').show();
    function pagetables(page) {
+     $('#ipage').hide();
+
        $("#loading").html("<img src='/images/loading.gif' />");
 
        $.ajax({
@@ -54,7 +64,7 @@
            success: function(res){
                if(res.code!=1){
                    warn(res.message);
-                   $("#loading").empty();
+                   
                }else{
                    let data=res.data.list;
                    if(!data){
@@ -104,8 +114,6 @@
                            '        </tr>';
                        tablebody=tablebody+trs;
                    }
-
-
                    let firstpage      = res.data.pagedetail.first==0?'':" onclick='pagetables("+res.data.pagedetail.first+")'";
                    let firststyle     = res.data.pagedetail.first==0?'ui-state-disabled':'';
                    let lastpage       = res.data.pagedetail.last==0?'':" onclick='pagetables("+res.data.pagedetail.last+")'";
@@ -138,10 +146,10 @@
                        '<a tabindex="0"  href=\'javascript:void(0)\' class=\"next fg-button ui-button ui-state-default '+nextstyle+'\" id="DataTables_Table_0_next" ' + next + ' >下页</a>' +
                        '<a tabindex="0"   href=\'javascript:void(0)\' class=\"last ui-corner-tr ui-corner-br fg-button ui-button ui-state-default '+lastpagestyle+'\" id=\"DataTables_Table_0_last\" '+ lastpage + '>最后</a>' +
                        '</div></div>';
-
                    $("#ipage").html( tableheader + tablebody + tableender);
                    $("#mypagers").html(mypager);
-
+                    sleep(5000);
+                   $('#ipage').show();
 
                    $("#loading").empty();
                }

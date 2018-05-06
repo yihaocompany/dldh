@@ -57,6 +57,17 @@ try {
     echo str_replace(["\n","\r","\t"], '', $application->handle()->getContent());
 
 } catch (\Exception $e) {
-    echo $e->getMessage() . '<br>';
-    echo '<pre>' . $e->getTraceAsString() . '</pre>';
+/*    echo $e->getMessage() . '<br>';
+    echo '<pre>' . $e->getTraceAsString() . '</pre>';*/
+    $log = array(
+        'file' => $e -> getFile(),
+        'line' => $e -> getLine(),
+        'code' => $e -> getCode(),
+        'msg' => $e -> getMessage(),
+        'trace' => $e -> getTraceAsString(),
+    );
+
+    $date = date('Ymd');
+    $logger = new \Phalcon\Logger\Adapter\File(BASE_PATH."/cache/logs/crash_{$date}.log");
+    $logger -> error(json_encode($log));
 }

@@ -16,10 +16,13 @@
     {{ stylesheet_link("/css/bootstrapSwitch.css") }}
     {{ stylesheet_link("/css/bootstrap-pager.css") }}
     {{ stylesheet_link("/css/bootstrap-wysihtml5.css") }}
+    {{ stylesheet_link('/css/jquery.mloading.css') }}
     {{ javascript_include("/js/excanvas.min.js") }}
     {{ javascript_include("/js/jquery.min.js") }}
     {{ javascript_include("/sweetalert/sweetalert/sweetalert.min.js") }}
     {{ javascript_include("/js/bootstrap-paginator.min.js") }}
     {{ javascript_include("/js/bootstrapSwitch.js") }}
+    {{ javascript_include("/js/jquery.mloading.js") }}
+
 </head>
 <body>
