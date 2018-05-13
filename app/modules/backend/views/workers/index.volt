@@ -23,7 +23,7 @@
                             <tr>
                                 <th>id</th>
                                 <th>头像</th>
-                                <th>用户登陆名</th>
+                                <th>用户登录名</th>
                                 <th>用户名</th>
                                 <th>手机</th>
                                 <th>邮件</th>
@@ -84,7 +84,7 @@
                 <div class="widget-content nopadding">
                     <form action="#" method="get" class="form-horizontal">
                         <div class="control-group">
-                            <label class="control-label">头象（600*600）</label>
+                            <label class="control-label">头像（600*600）</label>
                             <div class="controls">
                                 <input type="hidden" name="id"   id="id"   class="span3" placeholder="值" value="0" />
                                 <input type="file"   class="span3" id="images"    name="file" />
@@ -98,15 +98,15 @@
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label">头象（600*600）*</label>
+                            <label class="control-label">头像（600*600）*</label>
                             <div class="controls">
-                                <input type="text" name="head" id="head" class="span3" placeholder="头象" />
+                                <input type="text" name="head" id="head" class="span3" placeholder="头像" />
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label">登陆名*</label>
+                            <label class="control-label">登录名*</label>
                             <div class="controls">
-                                <input type="text" name="username" id="username" class="span3" placeholder="登陆名" />
+                                <input type="text" name="username" id="username" class="span3" placeholder="登录名" />
                             </div>
                         </div>
                         <div class="control-group">
@@ -191,11 +191,11 @@
     });
     function to_submit() {
         if($('#head').val()==''){
-            warnmsg("请上传头象");
+            warnmsg("请上传头像");
             return;
         }
         if($('#username').val()==''){
-            warnmsg("请输入登陆名");
+            warnmsg("请输入登录名");
             return;
         }
         if($('#realname').val()==''){
@@ -212,11 +212,15 @@
         }else{
             status=0;
         }
+
+        var id  = $("#id").val();
+        id      = id?id:0;
+
             $.ajax({
                 type : "POST",
                 url : '/backend/workers/updateworker',
                 data : {
-                    "id" : $("#id").val(),
+                    "id" : id,
                     'head':$('#head').val(),
                     'username':$('#username').val(),
                     'realname':$("#realname").val(),

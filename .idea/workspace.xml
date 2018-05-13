@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cc32b722-5c60-4b3c-8453-04add1e1fda0" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/WorkersController.php" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/WorkersController.php" />
       <change beforePath="$PROJECT_DIR$/app/modules/backend/views/workers/index.volt" afterPath="$PROJECT_DIR$/app/modules/backend/views/workers/index.volt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,9 +27,12 @@
       <file leaf-file-name="index.volt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/modules/backend/views/workers/index.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="207">
+              <caret line="216" column="26" lean-forward="true" selection-start-line="216" selection-start-column="26" selection-end-line="216" selection-end-column="26" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="e#4179#4186#1" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,8 +145,8 @@
         <option value="$PROJECT_DIR$/app/modules/backend/controllers/SystemController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/app/config/config.php" />
-        <option value="$PROJECT_DIR$/app/modules/backend/views/workers/index.volt" />
         <option value="$PROJECT_DIR$/app/modules/backend/controllers/WorkersController.php" />
+        <option value="$PROJECT_DIR$/app/modules/backend/views/workers/index.volt" />
       </list>
     </option>
   </component>
@@ -333,12 +335,12 @@
       <workItem from="1525499340577" duration="3920000" />
       <workItem from="1525526842523" duration="29287000" />
       <workItem from="1526176442227" duration="328000" />
-      <workItem from="1526208473280" duration="1081000" />
+      <workItem from="1526208473280" duration="1312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355404000" />
+    <option name="totallyTimeSpent" value="355635000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="24" y="23" width="1536" height="809" extended-state="0" />
@@ -743,9 +745,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/views/workers/index.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="207">
+          <caret line="216" column="26" lean-forward="true" selection-start-line="216" selection-start-column="26" selection-end-line="216" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="e#4179#4186#1" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
