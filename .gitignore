@@ -1,4 +1,5 @@
-.idea
+.idea/
 cache/logs
 cache/volt/_*
 app/config/config.php
+public/template
