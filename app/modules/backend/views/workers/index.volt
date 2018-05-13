@@ -11,6 +11,12 @@
                     <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
                         <h5>员工管理</h5> <span class="pull-right">     <h5><button class="btn btn-primary btn-mini" id="0"  data-toggle="modal" data-target="#myModal" onclick="showmodal(this)">新增员工</button></h5></span>
                     </div>
+                    <form action="" method="get" id="search-form">
+                        <div class="controls controls-row">
+                        <input type="text" placeholder="搜索真实姓名|手机" name="search" value="" class="span2 m-wrap">
+                        <button type="submit" class="btn btn-primary">搜索</button>
+                        </div>
+                    </form>
                     <div class="widget-content nopadding">
                         <table class="table table-bordered table-striped" id="tablelist">
                             <thead>

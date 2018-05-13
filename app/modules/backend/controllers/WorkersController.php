@@ -14,6 +14,7 @@ class WorkersController extends ControllerLoginBase
     }
 
     public function indexAction(){
+
         $page =intval($this->request->get('page'));
         $limit =3;
         $page = $page > 0 ? $page: 1 ;
