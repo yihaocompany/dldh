@@ -55,6 +55,7 @@
                                     </td>
                                     <td class="center">
                                         <button class="btn btn-primary btn-mini"   data-toggle="modal" id="{{ item['id'] }}" data-target="#myModal" onclick="showmodal(this)">修改</button>
+                                        <button class="btn btn-danger btn-mini"   data-toggle="modal" onclick="del({{item['id']}})">删除</button>
                                     </td>
                                 </tr>
                             {% endfor  %}
@@ -378,6 +379,27 @@
         }
         warnmsg(ret.message);
     });
+
+    function del(id){
+      $.ajax({
+          type:'Post',
+          url:'/backend/workers/del',
+          data:{"id":id},
+          dataType:'json',
+          success:function(res){
+              if(res.code==1){
+                  ret={message:'删除成功'};
+              }else{
+                  ret={message:'删除失败'};
+              }
+              alert(ret.message);
+              location.reload();
+          },
+          fail:function(error){
+            console.log(error);
+          }
+      });
+    }
 
     function swetalert(str) {
         swal({

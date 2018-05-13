@@ -142,6 +142,25 @@ class WorkersController extends ControllerLoginBase
        }
    }
 
+   public function delAction(){
+       try{
+           $d = $this->request->getPost();
+           $id = $d['id'];
+           $worker = Worker::findFirst('id='.$id);
+           if(!$worker){
+               exit($this->ajax_return('Worker was not found','0'));
+           }
+           if(!$worker->delete()){
+               foreach($worker->getMessages() as $message){
+                   exit($this->ajax_return($message,'0'));
+               }
+           }
+           exit($this->ajax_return('worker was deleted','1'));
+       }catch (\Exception $e){
+           exit($this->ajax_return('发生错误','0'));
+        }
+   }
+
    public  function signAction(){
        date_default_timezone_set ("Asia/Chongqing");
        $date=$this->request->get('data');
