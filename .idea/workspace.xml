@@ -2,47 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cc32b722-5c60-4b3c-8453-04add1e1fda0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/fakeloader.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/jquery.mloading.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/fakeloader.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/fakeloader.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery.mloading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bootstrap_web.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/bootstrap_web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Notice.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Notice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/NoticeCommit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/NoticeCommit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Worker.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Worker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/models/Zmodelbase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/common/models/Zmodelbase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/Module.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/Module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/ControllerBase.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/ControllerBase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/HelpController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/HelpController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/NoticeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/NoticeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/SystemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/SystemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/WarnsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/WarnsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/controllers/WorkersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/controllers/WorkersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/views/help/category.volt" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/views/help/category.volt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/views/help/index.volt" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/views/help/index.volt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/views/pole/index.volt" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/views/pole/index.volt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/views/public/htmlender.volt" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/views/public/htmlender.volt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/views/public/htmlheader.volt" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/views/public/htmlheader.volt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/backend/views/public/pagernav.volt" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/backend/views/public/pagernav.volt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/home/controllers/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/home/controllers/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_admin_login.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_help_index.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_index.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_index_index.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_pole_index.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_public_htmlender.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_public_htmlheader.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_public_htmlmenu.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_public_pagernav.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_system_index.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_system_users.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_workers_index.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_workers_sign.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_home_views_index_index.volt.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dldh.iml" afterPath="$PROJECT_DIR$/.idea/dldh.iml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,8 +16,9 @@
       <file leaf-file-name="index.volt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/modules/backend/views/help/index.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="36" column="45" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="45" />
+            <state relative-caret-position="0">
+              <caret line="36" column="45" lean-forward="false" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -65,8 +26,9 @@
       <file leaf-file-name="category.volt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/modules/backend/views/help/category.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+            <state relative-caret-position="420">
+              <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,8 +36,9 @@
       <file leaf-file-name="HelpController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/HelpController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="167" column="48" selection-start-line="167" selection-start-column="48" selection-end-line="167" selection-end-column="48" />
+            <state relative-caret-position="2505">
+              <caret line="167" column="48" lean-forward="false" selection-start-line="167" selection-start-column="48" selection-end-line="167" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -83,8 +46,9 @@
       <file leaf-file-name="SystemController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/SystemController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1382">
-              <caret line="110" column="48" selection-start-line="110" selection-start-column="48" selection-end-line="110" selection-end-column="48" />
+            <state relative-caret-position="1545">
+              <caret line="110" column="48" lean-forward="false" selection-start-line="110" selection-start-column="48" selection-end-line="110" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -92,8 +56,9 @@
       <file leaf-file-name="WorkersController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/WorkersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+            <state relative-caret-position="655">
+              <caret line="57" column="10" lean-forward="false" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,8 +66,9 @@
       <file leaf-file-name="pagernav.volt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/modules/backend/views/public/pagernav.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+            <state relative-caret-position="195">
+              <caret line="13" column="49" lean-forward="false" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,8 +76,9 @@
       <file leaf-file-name="e__phpsource_dldh_app_modules_backend_views_help_index.volt.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_help_index.volt.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+            <state relative-caret-position="870">
+              <caret line="58" column="7" lean-forward="false" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,8 +86,9 @@
       <file leaf-file-name="IndexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/modules/home/controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+            <state relative-caret-position="630">
+              <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,22 +96,11 @@
       <file leaf-file-name="index.volt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/modules/backend/views/pole/index.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2703">
-              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+            <state relative-caret-position="330">
+              <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#135#141#0" expanded="true" />
-                <element signature="e#141#147#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="htmlender.volt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/modules/backend/views/public/htmlender.volt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="858">
-              <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -256,6 +213,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="778" />
     <option name="y" value="145" />
@@ -266,10 +224,21 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource ProjectPane="true" />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -281,89 +250,7 @@
             <path>
               <item name="dldh" type="b2602c69:ProjectViewProjectNode" />
               <item name="dldh" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dldh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dldh" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dldh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dldh" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dldh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dldh" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dldh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dldh" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dldh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dldh" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="help" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dldh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dldh" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pole" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dldh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dldh" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dldh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dldh" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dldh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dldh" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="home" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dldh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dldh" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="cache" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="dldh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dldh" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="cache" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="logs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Dev" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -381,16 +268,16 @@
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\phpsource\dldh" />
+      <recent name="E:\phpsource\dldh\public\fonts" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="E:\phpsource\dldh\public\js" />
       <recent name="E:\phpsource\dldh\public\css" />
       <recent name="E:\phpsource\dldh\public\images" />
       <recent name="E:\phpsource\dldh\public\upload\head" />
-      <recent name="E:\phpsource\dldh\documents" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\phpsource\dldh" />
-      <recent name="E:\phpsource\dldh\public\fonts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -404,6 +291,9 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -447,35 +337,34 @@
       <workItem from="1525450011238" duration="1658000" />
       <workItem from="1525499340577" duration="3920000" />
       <workItem from="1525526842523" duration="29287000" />
+      <workItem from="1526176442227" duration="328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="353564000" />
+    <option name="totallyTimeSpent" value="353892000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1032" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="809" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33177084" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.062227074" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24034335" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31564626" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,89 +384,158 @@
       </breakpoints>
       <option name="time" value="6" />
     </breakpoint-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/modules/backend/views/help/category.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/HelpController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2505">
+          <caret line="167" column="48" lean-forward="false" selection-start-line="167" selection-start-column="48" selection-end-line="167" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/SystemController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1545">
+          <caret line="110" column="48" lean-forward="false" selection-start-line="110" selection-start-column="48" selection-end-line="110" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/modules/backend/views/public/pagernav.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="49" lean-forward="false" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_help_index.volt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="7" lean-forward="false" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/modules/home/controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/modules/backend/views/pole/index.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/modules/backend/views/public/htmlender.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="33" lean-forward="false" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/WorkersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/common/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-381">
-          <caret line="381" column="10" selection-start-line="381" selection-start-column="10" selection-end-line="381" selection-end-column="10" />
+          <caret line="381" column="10" lean-forward="false" selection-start-line="381" selection-start-column="10" selection-end-line="381" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/views/workers/index.volt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
-          <caret line="27" column="33" selection-end-line="383" selection-end-column="9" />
+          <caret line="27" column="33" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="383" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template/backend/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="75" column="23" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="23" />
+          <caret line="75" column="23" lean-forward="false" selection-start-line="75" selection-start-column="7" selection-end-line="75" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/embed.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1144">
-          <caret line="52" column="22" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+          <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/common/models/Help.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5588">
-          <caret line="254" column="103" selection-start-line="254" selection-start-column="91" selection-end-line="254" selection-end-column="103" />
+          <caret line="254" column="103" lean-forward="false" selection-start-line="254" selection-start-column="91" selection-end-line="254" selection-end-column="103" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_home_views_index_index.volt.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="39" column="6" lean-forward="true" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_home_views_index_index.volt.php" />
     <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="13" column="5" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/views/notice/index.volt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8426">
-          <caret line="383" column="9" selection-start-line="383" selection-start-column="9" selection-end-line="383" selection-end-column="9" />
+          <caret line="383" column="9" lean-forward="false" selection-start-line="383" selection-start-column="9" selection-end-line="383" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/common/models/Notice.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4290">
-          <caret line="195" column="65" selection-start-line="195" selection-start-column="65" selection-end-line="195" selection-end-column="65" />
+          <caret line="195" column="65" lean-forward="false" selection-start-line="195" selection-start-column="65" selection-end-line="195" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/common/models/NoticeWorker.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2332">
-          <caret line="106" column="51" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="51" />
+          <caret line="106" column="51" lean-forward="false" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/common/models/NoticeCommit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5060">
-          <caret line="230" column="43" selection-start-line="230" selection-start-column="43" selection-end-line="230" selection-end-column="43" />
+          <caret line="230" column="43" lean-forward="false" selection-start-line="230" selection-start-column="43" selection-end-line="230" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/common/models/Worker.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8360">
-          <caret line="380" column="97" selection-start-line="380" selection-start-column="65" selection-end-line="380" selection-end-column="97" />
+          <caret line="380" column="97" lean-forward="false" selection-start-line="380" selection-start-column="65" selection-end-line="380" selection-end-column="97" />
           <folding>
             <element signature="e#30#53#0#PHP" expanded="true" />
           </folding>
@@ -587,26 +545,23 @@
     <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/ControllerLoginBase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="15" selection-end-column="5" />
+          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_index_index.volt.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_workers_index.volt.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="949">
-          <caret line="79" column="99" selection-start-line="79" selection-start-column="99" selection-end-line="79" selection-end-column="99" />
+          <caret line="79" column="99" lean-forward="false" selection-start-line="79" selection-start-column="99" selection-end-line="79" selection-end-column="99" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/Module.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding>
-            <element signature="e#39#63#0#PHP" expanded="true" />
+            <element signature="e#39#63#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -621,28 +576,28 @@
     <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/WarnsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/PoleController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="790">
-          <caret line="101" column="15" selection-start-line="101" selection-start-column="15" selection-end-line="101" selection-end-column="15" />
+          <caret line="101" column="15" lean-forward="false" selection-start-line="101" selection-start-column="15" selection-end-line="101" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+          <caret line="12" column="48" lean-forward="false" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/common/models/Zmodelbase.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -653,39 +608,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/loading.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/loading.gif">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/NoticeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="854">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/bootstrap_web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="678">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
+          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/fakeloader.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/fakeloader.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/cache/logs/crash_20180506.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -698,12 +638,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_public_htmlender.volt.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132" />
+        <state relative-caret-position="-132">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_pole_index.volt.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#135#141#0" expanded="true" />
             <element signature="e#141#147#0" expanded="true" />
@@ -714,111 +657,118 @@
     <entry file="file://$PROJECT_DIR$/app/modules/backend/views/public/htmlmenu.volt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="61" />
+          <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_public_htmlmenu.volt.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-709" />
+        <state relative-caret-position="-709">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_public_htmlheader.volt.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/views/public/htmlheader.volt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/jquery.mloading.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/jquery.mloading.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-660" />
+        <state relative-caret-position="-660">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/views/public/htmlender.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="858">
-          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+        <state relative-caret-position="675">
+          <caret line="45" column="33" lean-forward="false" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/views/pole/index.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2703">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+        <state relative-caret-position="330">
+          <caret line="22" column="6" lean-forward="false" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#135#141#0" expanded="true" />
-            <element signature="e#141#147#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/upload/help/1525601202.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/upload/help/1525601315.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/home/controllers/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        <state relative-caret-position="630">
+          <caret line="42" column="20" lean-forward="false" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/views/public/pagernav.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+        <state relative-caret-position="195">
+          <caret line="13" column="49" lean-forward="false" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cache/volt/e__phpsource_dldh_app_modules_backend_views_help_index.volt.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+        <state relative-caret-position="870">
+          <caret line="58" column="7" lean-forward="false" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/views/help/index.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="36" column="45" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="45" />
+        <state relative-caret-position="0">
+          <caret line="36" column="45" lean-forward="false" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/views/help/category.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+        <state relative-caret-position="420">
+          <caret line="28" column="39" lean-forward="false" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/HelpController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="167" column="48" selection-start-line="167" selection-start-column="48" selection-end-line="167" selection-end-column="48" />
+        <state relative-caret-position="2505">
+          <caret line="167" column="48" lean-forward="false" selection-start-line="167" selection-start-column="48" selection-end-line="167" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/SystemController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1382">
-          <caret line="110" column="48" selection-start-line="110" selection-start-column="48" selection-end-line="110" selection-end-column="48" />
+        <state relative-caret-position="1545">
+          <caret line="110" column="48" lean-forward="false" selection-start-line="110" selection-start-column="48" selection-end-line="110" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/backend/controllers/WorkersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="55" column="48" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
+        <state relative-caret-position="655">
+          <caret line="57" column="10" lean-forward="false" selection-start-line="57" selection-start-column="10" selection-end-line="57" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>

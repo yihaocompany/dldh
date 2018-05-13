@@ -1,3 +1,4 @@
 .idea
-cache/volt/
-cache/log/
+cache/logs
+cache/volt/_*
+app/config/config.php
