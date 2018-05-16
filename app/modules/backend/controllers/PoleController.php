@@ -6,20 +6,18 @@ use Dldh\Helpers\PaginatorHelper;
 use Phalcon\Mvc\Model\Manager;
 use Dldh\Models\Pole as Pole;
 use Dldh\Models\Worker as Worker;
-use  Dldh\Models\Area  as Area;
+use Dldh\Models\Area  as Area;
 use Phalcon\Mvc\Model\Query\Builder as QueryBuilder;
 
 
 class PoleController extends ControllerLoginBase
 {
-
-
     public function indexAction()
     {
-   /*     $list=$this->modelsManager->createQuery('SELECT a.id as id, a.name as name, b.realname as realname ,c.area_name as area_name,a.address as address
-                                                 ,a.lat as lat, a.lng as lng
-                                                FROM  \Dldh\Models\Pole as a ,\Dldh\Models\Worker as b , \Dldh\Models\Area as c  where c.id=a.place_id  and  a.worker_id=b.id');
-        $list  = $list->execute();*/
+   /* $list=$this->modelsManager->createQuery('SELECT a.id as id, a.name as name, b.realname as realname ,c.area_name as area_name,a.address as address
+       ,a.lat as lat, a.lng as lng
+       FROM  \Dldh\Models\Pole as a ,\Dldh\Models\Worker as b , \Dldh\Models\Area as c  where c.id=a.place_id  and  a.worker_id=b.id');
+       $list  = $list->execute();*/
        // $list=new \Dldh\Models\Pole();
        // $list=$list->find();
    /*     var_dump($list->getWorker()->toArray());
@@ -131,11 +129,17 @@ class PoleController extends ControllerLoginBase
     public function addadminlistAction(){
     }
 
-
     /**
      * 修改塔杆
      */
     public function modiadminlistAction(){
+    }
+
+    public function mapAction(){
+        $pole_list=\Dldh\Models\Pole::find();
+        $list = $pole_list->toArray();
+       // var_dump($list);exit;
+        $this->view->setVars(array('list'=>$list));
     }
 }
 
